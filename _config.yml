@@ -1,0 +1,27 @@
+domain: kmaeda6320084.github.io
+url: https://kmaeda6320084.github.io
+baseurl: /learn_crypto
+
+kramdown:
+  parse_block_html: true
+  highlighter: none
+  syntax_highlighter_opts:
+    disable: true
+
+sass:
+  sass_dir: assets/sass
+  style: expanded
+
+strict_front_matter: true
+
+collections:
+  posts:
+    permalink: "/:collection/:year/:month/:day/:title:output_ext"
+    output: true
+
+defaults:
+  - scope:
+      path: _posts
+      type: posts
+    values:
+      layout: post
