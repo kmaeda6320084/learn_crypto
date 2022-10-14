@@ -18,6 +18,9 @@ collections:
   posts:
     permalink: "/:collection/:year/:month/:day/:title:output_ext"
     output: true
+  categories:
+    directory: pages/categories
+    output: true
 
 defaults:
   - scope:
