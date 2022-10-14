@@ -9,7 +9,7 @@ kramdown:
     disable: true
 
 sass:
-  sass_dir: assets/sass
+  sass_dir: assets/scss
   style: expanded
 
 strict_front_matter: true
