@@ -92,8 +92,23 @@ a:not([class]):not([data-stylemod*=no-link-highlight]) {
     }
 }
 
-.link-button {
+.link-button-light {
     background-color: $main-bg-color;
+    display: inline;
+    text-decoration: none;
+    padding: 0.25em 0.5em;
+    color: $main-color !important;
+    box-shadow: 0 4px 4px -4px #000;
+    transition: all 200ms ease-out;
+    text-align: center;
+
+    &:hover {
+        box-shadow: 0 4px 4px -4px $main-color;
+    }
+}
+
+.link-button-dark {
+    background-color: $main-bg-dark-color;
     display: inline;
     text-decoration: none;
     padding: 0.25em 0.5em;

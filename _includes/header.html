@@ -1,4 +1,7 @@
 <header id="header">
     <div> {{ include.content }} </div>
-    {% include btn_link.html url="/" content="home" styles="float: right;" %}
+    <a href="{{ '/' | relative_url }}" data-stylemod="no-link-highlight" class="link-button-light"
+        styles="float: right;">
+        home
+    </a>
 </header>

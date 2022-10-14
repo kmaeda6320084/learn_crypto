@@ -22,5 +22,7 @@ layout: default
     <h1>404</h1>
 
     <p><strong>There is nothing!</strong></p>
-    {% include btn_link.html url="/" content="go home" %}
+    <a href="{{ '/' | relative_url }}" data-stylemod="no-link-highlight" class="link-button-dark">
+        go home
+    </a>
 </div>
