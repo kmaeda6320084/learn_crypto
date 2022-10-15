@@ -26,7 +26,7 @@ layout: default
             {% for tag in site.tags %}
             {% assign tag_name = tag[0] %}
             <li>
-                {% include tag_link.html site=site tag=tag_name %}
+                {% include tag_link.html tag=tag_name %}
                 <ul>
                     {% assign post_by_date = tag[1] | sort:"last_modified" | reverse %}
                     {% for post in post_by_date %}
