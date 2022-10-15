@@ -26,7 +26,9 @@ layout: default
             {% for tag in site.tags %}
             {% assign tag_name = tag[0] %}
             <li>
-                <a href="{{ site.baseurl }}/pages/categories/{{ tag_name | slugify }}">
+                {% assign category_url = "{{ site.collections.categories.directory }}/{{ tag_name | slugify }}.html" %}
+                {% category_url | inspect %}
+                <a href="{{ category_url | relative_url }}">
                     {{ tag_name }}
                 </a>
                 <ul>
