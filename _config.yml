@@ -2,6 +2,9 @@ domain: kmaeda6320084.github.io
 url: https://kmaeda6320084.github.io
 baseurl: /learn_crypto
 
+config:
+  category_path: pages/categories
+
 kramdown:
   parse_block_html: true
   highlighter: none
@@ -17,9 +20,6 @@ strict_front_matter: true
 collections:
   posts:
     permalink: "/:collection/:year/:month/:day/:title:output_ext"
-    output: true
-  categories:
-    directory: pages/categories
     output: true
 
 defaults:
