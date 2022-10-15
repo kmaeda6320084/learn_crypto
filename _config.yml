@@ -2,6 +2,8 @@ domain: kmaeda6320084.github.io
 url: https://kmaeda6320084.github.io
 baseurl: /learn_crypto
 
+
+test: "test data"
 config:
   category_path: "pages/categories"
 
