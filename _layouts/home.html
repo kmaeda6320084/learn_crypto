@@ -20,6 +20,8 @@ layout: default
         </ul>
     </div>
 
+    {{ site | pretty_jsonify }}
+
     <div>
         <h2>Tags</h2>
         <ul>
@@ -42,5 +44,5 @@ layout: default
         </ul>
     </div>
 
-    {{ site.config.category_path | inpect }}
+    {{ site.config | inpect }}
 </div>
