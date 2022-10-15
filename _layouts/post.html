@@ -13,7 +13,7 @@ layout: default
     <div style="margin-left: auto;">
         tags:
         {% for tag in page.tags %}
-        {% assign category_url = "{{ site.collections.categories.directory }}/{{ tag | slugify }}.html" %}
+        {% assign category_url = site.collections.categories.directory | tag | slugify %}
 
         {{ category_url | inspect }}
         <a href={{ category_url | relative_url }}>

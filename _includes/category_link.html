@@ -1,0 +1,6 @@
+{% assign directory = site.collections.categories.directory %}
+{% assign category_url = "{{ site.collections.categories.directory }}/{{ tag_name | slugify }}.html" %}
+{{ category_url | inspect }}
+<a href="{{ category_url | relative_url }}">
+    {{ tag_name }}
+</a>
