@@ -1,4 +1,4 @@
-{% assign __tag_link_directory = include.collections.categories.directory %}
+{% assign __tag_link_directory = include.site.collections.categories.directory %}
 {% assign __tag_link_tag = include.tag | slugify %}
 {% assign ____tag_link_tag_url = __tag_link_directory | append: "/" | append: __tag_link_tag %}
 {{ ____tag_link_tag_url | inspect }}
