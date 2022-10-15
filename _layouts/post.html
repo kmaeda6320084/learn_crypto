@@ -15,7 +15,7 @@ layout: default
         {% for tag in page.tags %}
         {% assign category_url = "{{ site.collections.categories.directory }}/{{ tag | slugify }}.html" %}
 
-        {% category_url | inspect %}
+        {{ category_url | inspect }}
         <a href={{ category_url | relative_url }}>
             {{ tag }}
         </a>
