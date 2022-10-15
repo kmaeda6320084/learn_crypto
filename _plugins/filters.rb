@@ -21,4 +21,4 @@ module Jekyll
     end
 end
   
-Liquid::Template.register_filter(AdditionalFilters)
+Liquid::Template.register_filter(Jekyll::AdditionalFilters)

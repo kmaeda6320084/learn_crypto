@@ -1,7 +1,5 @@
 module Jekyll 
-    class CategoryPageGenerator < Jekyll::Generator
-        safe true
-
+    class CategoryPageGenerator < ::Jekyll::Generator
         def generate(site)
             dir = site.config['settings']['category_path']
             site.categories.each_key do |category|
@@ -10,7 +8,7 @@ module Jekyll
         end
     end
 
-    class CategoryPage < Jekyll::Page
+    class CategoryPage < ::Jekyll::Page
         def initialize(site, base, dir, tag)
             @site, @base, @dir = site, base, dir
             @name = "#{tag}.html"
@@ -18,7 +16,7 @@ module Jekyll
             self.content = <<~TEXT
             ---
             layout: default
-            parmalink: "#{dir}/#{Jekyll::Utils.slugify(category)}"
+            parmalink: "#{dir}/#{::Jekyll::Utils.slugify(category)}"
             category: #{category}
             ---
             <h1>Category : {{ page.category }}</h1>
