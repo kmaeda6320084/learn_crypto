@@ -3,8 +3,7 @@ url: https://kmaeda6320084.github.io
 baseurl: /learn_crypto
 
 
-test: "test data"
-config:
+test:
   category_path: "pages/categories"
 
 kramdown:
