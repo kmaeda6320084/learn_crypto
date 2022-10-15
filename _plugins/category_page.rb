@@ -1,10 +1,10 @@
 require "fileutils"
 
-def category_page_content(category)
+def category_page_content(dir, category)
     return <<~TEXT
     ---
     layout: default
-    parmalink: "/categories/#{Jekyll::Utils.slugify(category)}"
+    parmalink: "#{dir}/#{Jekyll::Utils.slugify(category)}"
     category: #{category}
     ---
     <h1>Category : {{ page.category }}</h1>
@@ -38,7 +38,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
 
     site.tags.keys.each do |tag|
         file = File.join(dir, "#{tag}.html") 
-        File.write(file, category_page_content(tag))
+        File.write(file, category_page_content(dir, tag))
         p "generated: #{file}"
     end
 end
