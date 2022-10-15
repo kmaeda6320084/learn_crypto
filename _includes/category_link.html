@@ -1,7 +1,0 @@
-{% assign __category_link_directory = site.collections.categories.directory %}
-{% assign __category_link_tag = include.tag | slugify %}
-{% assign ____category_link_category_url = __category_link_directory | append: "/" | append: __category_link_tag %}
-{{ ____category_link_category_url | inspect }}
-<a href="{{ ____category_link_category_url | relative_url }}">
-    {{ include.tag }}
-</a>
