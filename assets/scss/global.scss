@@ -30,7 +30,7 @@ body {
     align-items: center;
     grid-template: "main nav" 1fr / 1fr auto;
 
-    &>#header-nav {
+    #header-nav {
         grid-area: nav;
         border-left: 1px;
         display: flex;
