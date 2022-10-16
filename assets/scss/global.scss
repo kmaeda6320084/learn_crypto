@@ -20,7 +20,7 @@ body {
     box-sizing: border-box;
     top: 0;
     left: 0;
-    padding-left: 0.5em;
+    padding: 0.5em;
     width: 100%;
     background-color: rgba($main-bg-dark-color, 0.7);
     backdrop-filter: blur(1.5px);
@@ -31,7 +31,7 @@ body {
 
     #header-nav {
         grid-area: nav;
-        padding: 0.5em;
+        padding-left: 0.5em;
         display: flex;
         border-left: solid 1px $main-border-color;
         flex-direction: column-reverse;
