@@ -2,7 +2,10 @@
 layout: default
 ---
 {% assign category = page.title | slugify %}
-<h1>Category : {{ category }}</h1>
+{% capture header %}
+<h1>{{ category }}</h1>
+{% endcapture %}
+{% include header.html content=header %}
 <hr>
 {% if site.tags[category] %}
 <ul>
