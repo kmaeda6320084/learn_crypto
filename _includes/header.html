@@ -1,7 +1,8 @@
 <header id="header">
     <div style="grid-area: main;"> {{ include.content }} </div>
-    <a href="{{ '/' | relative_url }}" data-stylemod="no-link-highlight" class="link-button-light"
-        style="grid-area: nav; height: min-content; width: min-content;">
-        home
-    </a>
+    <div id="header-nav">
+        <a href=" {{ '/' | relative_url }}" data-stylemod="no-link-highlight" class="link-button-light">
+            home
+        </a>
+    </div>
 </header>

@@ -29,6 +29,15 @@ body {
     gap: 1em;
     align-items: center;
     grid-template: "main nav" 1fr / 1fr auto;
+
+    &>#header-nav {
+        grid-area: nav;
+        border-left: 1px;
+        display: flex;
+        border-left: solid 1px $main-border-color;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
 }
 
 hr {
