@@ -42,8 +42,8 @@ body {
 }
 
 hr {
-    border-top: $main-border-color;
-    border-left: $main-border-color;
+    border-top: solid $main-border-color;
+    border-left: solid $main-border-color;
     border-bottom: none;
     border-right: none;
 }
