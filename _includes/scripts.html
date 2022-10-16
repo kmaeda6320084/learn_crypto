@@ -14,7 +14,7 @@
         let delta = window.scrollY - scrollY;
         let height = header.clientHeight;
         scrollY = window.scrollY;
-        position = Math.max(clamp(position + delta, -height, 0), -scrollY);
+        position = Math.max(clamp(position + delta * 0.5, -height, 0), -scrollY);
         header.style.top = `${position}px`;
 
         function clamp(num, min, max) {
