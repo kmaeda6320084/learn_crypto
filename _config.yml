@@ -19,19 +19,19 @@ collections_dir: collections
 
 collections:
   posts:
-    permalink: "/:collection/:year/:month/:day/:title:output_ext"
-    layout: post
     output: true
   category:
-    permalink: "/:collection/:title:output_ext"
-    category: ":title"
-    layout: "category"
     output: true
   
 
 defaults:
   - scope:
-      path: _posts
       type: posts
     values:
       layout: post
+  - scope:
+      type: category
+    values:
+      layout: "category"
+      category: ":title"
+  
