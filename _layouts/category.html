@@ -1,11 +1,12 @@
 ---
 layout: default
 ---
-<h1>Category : {{ page.name }}</h1>
+{% assign category = page.collection %}
+<h1>Category : {{ category }}</h1>
 <hr>
-{% if site.tags[page.name] %}
+{% if site.tags[category] %}
 <ul>
-    {% assign post_by_date = site.tags[page.name] | sort:"date" | reverse %}
+    {% assign post_by_date = site.tags[category] | sort:"date" | reverse %}
     {% for post in post_by_date %}
     <li>
         <a href="{{ post.url | relative_url }}">
