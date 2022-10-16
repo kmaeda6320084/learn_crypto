@@ -19,8 +19,10 @@ collections_dir: collections
 
 collections:
   posts:
+    permalink: "/:collection/:year/:month/:day/:title:output_ext"
     output: true
   category:
+    permalink: "/:collection/:title:output_ext"
     output: true
   
 
@@ -33,5 +35,4 @@ defaults:
       type: category
     values:
       layout: "category"
-      category: ":title"
   
