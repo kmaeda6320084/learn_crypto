@@ -3,6 +3,9 @@ layout: default
 ---
 {% capture header %}
 <h2>{{ page.title }}</h2>
+{% endcapture %}
+{% include header.html content=header %}
+
 <div style="display: flex; column-gap: 1em;">
     <div>
         投稿 : {{ page.date | date: "%Y/%m/%d" }}
@@ -17,8 +20,7 @@ layout: default
         {% endfor %}
     </div>
 </div>
-{% endcapture %}
-{% include header.html content=header %}
+
 <div class="post-content">
     {{- content -}}
 </div>

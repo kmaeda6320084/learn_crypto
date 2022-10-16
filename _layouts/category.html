@@ -6,7 +6,6 @@ layout: default
 <h2>{{ category }}</h2>
 {% endcapture %}
 {% include header.html content=header %}
-<hr>
 {% if site.tags[category] %}
 <ul>
     {% assign post_by_date = site.tags[category] | sort:"date" | reverse %}
