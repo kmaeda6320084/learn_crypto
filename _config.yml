@@ -3,9 +3,6 @@ url: https://kmaeda6320084.github.io
 baseurl: /learn_crypto
 
 
-settings:
-  category_path: "pages/categories"
-
 kramdown:
   parse_block_html: true
   highlighter: none
@@ -18,10 +15,18 @@ sass:
 
 strict_front_matter: true
 
+collections_dir: _collections
+
 collections:
   posts:
     permalink: "/:collection/:year/:month/:day/:title:output_ext"
     output: true
+  category:
+    permalink: "/:collection/:title:output_ext"
+    category: ":title"
+    layout: "category"
+    output: true
+  
 
 defaults:
   - scope:
