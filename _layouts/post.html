@@ -5,7 +5,7 @@ layout: default
 <h2>{{ page.title }}</h2>
 {% endcapture %}
 {% include header.html content=header %}
-<div style="display: flex; column-gap: 1em; margin: auto;">
+<div style="display: flex; column-gap: 1em; margin: auto; justify-content: center;">
     <div>
         投稿 : {{ page.date | date: "%Y/%m/%d" }}
     </div>
@@ -13,7 +13,7 @@ layout: default
         最終更新 : {{ page.last_modified | default: page.date | date: "%Y/%m/%d" }}
     </div>
 </div>
-<div style="display: flex; column-gap: 1em; margin: auto;">
+<div style="display: flex; column-gap: 1em; margin: auto; justify-content: center;">
     {% for tag in page.tags %}
     <p>
         #
@@ -23,5 +23,6 @@ layout: default
 </div>
 
 <div class="post-content">
+    <hr>
     {{- content -}}
 </div>
