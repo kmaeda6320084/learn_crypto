@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign category = page.title %}
+{% assign category = page.title | slugify %}
 <h1>Category : {{ category }}</h1>
 <hr>
 {% if site.tags[category] %}

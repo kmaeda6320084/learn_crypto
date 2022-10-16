@@ -34,5 +34,5 @@ defaults:
   - scope:
       type: category
     values:
-      layout: "category"
+      layout: category
   
