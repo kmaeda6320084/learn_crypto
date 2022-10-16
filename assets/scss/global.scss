@@ -27,7 +27,6 @@ body {
     border-bottom: solid 1px $main-border-color;
     display: grid;
     gap: 1em;
-    align-items: center;
     grid-template: "main nav" 1fr / 1fr auto;
 
     #header-nav {
