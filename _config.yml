@@ -15,7 +15,7 @@ sass:
 
 strict_front_matter: true
 
-collections_dir: _collections
+collections_dir: collections
 
 collections:
   posts:
