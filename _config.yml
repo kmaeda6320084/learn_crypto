@@ -20,6 +20,7 @@ collections_dir: collections
 collections:
   posts:
     permalink: "/:collection/:year/:month/:day/:title:output_ext"
+    layout: post
     output: true
   category:
     permalink: "/:collection/:title:output_ext"
