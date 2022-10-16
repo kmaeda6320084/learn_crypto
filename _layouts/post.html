@@ -5,20 +5,21 @@ layout: default
 <h2>{{ page.title }}</h2>
 {% endcapture %}
 {% include header.html content=header %}
-
-<div style="display: flex; column-gap: 1em;">
+<div style="display: flex; column-gap: 1em; margin: auto;">
     <div>
         投稿 : {{ page.date | date: "%Y/%m/%d" }}
     </div>
     <div>
         最終更新 : {{ page.last_modified | default: page.date | date: "%Y/%m/%d" }}
     </div>
-    <div style="margin-left: auto;">
-        {% for tag in page.tags %}
+</div>
+<div style="display: flex; column-gap: 1em; margin: auto;">
+    {% for tag in page.tags %}
+    <p>
         #
         {% include tag_link.html tag=tag %}
         {% endfor %}
-    </div>
+    </p>
 </div>
 
 <div class="post-content">
