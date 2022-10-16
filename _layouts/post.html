@@ -8,7 +8,7 @@ layout: default
         投稿 : {{ page.date | date: "%Y/%m/%d" }}
     </div>
     <div>
-        最終更新 : {{ page.last_modified | date: "%Y/%m/%d" }}
+        最終更新 : {{ page.last_modified | default: page.date | date: "%Y/%m/%d" }}
     </div>
     <div style="margin-left: auto;">
         tags:
