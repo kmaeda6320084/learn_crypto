@@ -13,7 +13,7 @@ layout: default
             {% for post in post_by_date %}
             <li>
                 <a href="{{ post.url | relative_url }}">
-                    [{{ post.last_modified | date: "%Y/%m/%d" }}] {{ post.title }}
+                    [{{ post.last_modified | default: post.date | date: "%Y/%m/%d" }}] {{ post.title }}
                 </a>
             </li>
             {% endfor %}
