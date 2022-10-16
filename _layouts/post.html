@@ -11,8 +11,8 @@ layout: default
         最終更新 : {{ page.last_modified | default: page.date | date: "%Y/%m/%d" }}
     </div>
     <div style="margin-left: auto;">
-        #
         {% for tag in page.tags %}
+        #
         {% include tag_link.html tag=tag %}
         {% endfor %}
     </div>
