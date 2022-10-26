@@ -35,7 +35,7 @@ body {
         padding-left: 0.5em;
         display: flex;
         border-left: solid 1px $main-border-color;
-        flex-direction: column-reverse;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
     }
