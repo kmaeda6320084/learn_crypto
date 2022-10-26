@@ -8,20 +8,22 @@
 <!-- header -->
 <script type="text/javascript">
     const header = document.getElementById("header");
+    const speed = 0.4;
+
     let scrollY = window.scrollY;
     let position = 0;
-
     window.addEventListener("scroll", () => {
-        let delta = window.scrollY - scrollY;
+        let delta = (window.scrollY - scrollY) * speed;
         let height = header.scrollHeight;
         scrollY = window.scrollY;
-        position = Math.max(clamp(position + delta * 0.5, -height, 0), -scrollY);
+        position = Math.max(Math.min(position + delta, 0), -height, -scrollY);
         header.style.top = `${position}px`;
+    });
 
-        function clamp(num, min, max) {
-            if (num < min) return min;
-            if (num > max) return max;
-            return num;
-        }
+    window.addEventListener("load", () => {
+        let height = header.scrollHeight;
+        let stylesheet = new CSSStyleSheet();
+        stylesheet.replaceSync(`* { scroll-margin-top: ${height}px; }`);
+        document.adoptedStyleSheets.push(stylesheet);
     });
 </script>

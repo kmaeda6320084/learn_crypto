@@ -32,6 +32,8 @@ tags: crypto
 
 ## ハッシュ
 
+## スキーマ
+
 # 暗号の分類
 
 ## 共通鍵暗号 {: #commonkeycrypto}
