@@ -18,6 +18,11 @@
     }
 }
 
+.content-root {
+    display: flex;
+    flex-direction: row;
+}
+
 @media (min-aspect-ratio: 1/1) {
     .post-content {
         width: 61.8%;
