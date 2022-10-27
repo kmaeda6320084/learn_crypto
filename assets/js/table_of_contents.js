@@ -9,10 +9,10 @@ function onresize() {
 
     if (viewport.height > viewport.width) {//portrait
         anchor_landscape.innerHTML = undefined;
-        anchor_portrait.innerHTML = createTableOfContents();
+        anchor_portrait.append(createTableOfContents());
     } else {//landscape
         anchor_portrait.innerHTML = undefined;
-        anchor_landscape.innerHTML = createTableOfContents();
+        anchor_landscape.append(createTableOfContents());
     }
 }
 
