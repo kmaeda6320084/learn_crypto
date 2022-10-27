@@ -3,7 +3,7 @@ layout: default
 ---
 {% capture header %}
 <h2>{{ page.title }}</h2>
-<link data-nav-anchor="portrait" style="margin-left: auto;">
+<div id="auto-nav-anchor-portrait" style="margin-left: auto;"></div>
 {% endcapture %}
 {% include header.html content=header %}
 <div style="display: flex; column-gap: 1em; margin: auto; justify-content: center;">
@@ -24,7 +24,7 @@ layout: default
 </div>
 
 <div class="content-root">
-    <link data-nav-anchor="landscape">
+    <div id="auto-nav-anchor-landscape" style="grid-area: nav-l"> </div>
     <div class="post-content">
         <hr>
         {{- content -}}

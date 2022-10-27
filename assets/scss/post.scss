@@ -1,5 +1,6 @@
 .post-content {
     margin: auto;
+    grid-area: "main";
 
     h1 {
         border-bottom: solid 2px $main-border-color;
@@ -19,19 +20,21 @@
 }
 
 .content-root {
-    display: flex;
-    flex-direction: row;
+    display: grid;
 }
 
 @media (min-aspect-ratio: 1/1) {
-    .post-content {
-        width: 61.8%;
+    .content-root {
+        grid-template: "nav-l main ." 1fr / 1fr 61.8% 1fr;
     }
 }
 
 @media (max-aspect-ratio: 1/1) {
+    .content-root {
+        grid-template: "nav-l main ." 1fr / 1fr 100% 1fr;
+    }
+
     .post-content {
-        width: 100%;
         padding: 0 1em;
     }
 }
