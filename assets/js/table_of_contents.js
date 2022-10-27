@@ -1,23 +1,5 @@
-const anchor_portrait = document.getElementById("auto-nav-anchor-portrait");
-const anchor_landscape = document.getElementById("auto-nav-anchor-landscape");
-if (!anchor_landscape || !anchor_portrait) return;
-onresize();
-window.addEventListener('resize', onresize);
-
-function onresize() {
-    const viewport = window.visualViewport;
-
-    if (viewport.height > viewport.width) {//portrait
-        anchor_landscape.innerHTML = undefined;
-        anchor_portrait.append(createTableOfContents());
-    } else {//landscape
-        anchor_portrait.innerHTML = undefined;
-        anchor_landscape.append(createTableOfContents());
-    }
-}
-
-function createTableOfContents() {
-    const headings = iterateHeading(window.document.body);
+export function createTableOfContents(node) {
+    const headings = iterateHeading(node);
     const list = document.createElement('ul');
     list.append(...createItems(1, peekable(headings)));
     return list;

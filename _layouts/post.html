@@ -3,7 +3,7 @@ layout: default
 ---
 {% capture header %}
 <h2>{{ page.title }}</h2>
-<div id="auto-nav-anchor-portrait" style="margin-left: auto;"></div>
+<div id="auto-toc-anchor-portrait" style="margin-left: auto;"></div>
 {% endcapture %}
 {% include header.html content=header %}
 <div style="display: flex; column-gap: 1em; margin: auto; justify-content: center;">
@@ -24,9 +24,28 @@ layout: default
 </div>
 
 <div class="content-root">
-    <div id="auto-nav-anchor-landscape" style="grid-area: nav-l"> </div>
+    <div id="auto-toc-anchor-landscape" style="grid-area: nav-l"> </div>
     <div class="post-content">
         <hr>
         {{- content -}}
     </div>
 </div>
+
+<script>
+    const anchor_portrait = document.getElementById("auto-toc-anchor-portrait");
+    const anchor_landscape = document.getElementById("auto-toc-anchor-landscape");
+    onresize();
+    window.addEventListener('resize', onresize);
+
+    function onresize() {
+        const viewport = window.visualViewport;
+
+        if (viewport.height > viewport.width) {//portrait
+            anchor_landscape.innerHTML = undefined;
+            anchor_portrait.append(createTableOfContents(document.body));
+        } else {//landscape
+            anchor_portrait.innerHTML = undefined;
+            anchor_landscape.append(createTableOfContents(document.body));
+        }
+    }
+</script>
