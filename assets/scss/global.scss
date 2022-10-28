@@ -16,7 +16,6 @@ body {
     padding-bottom: 33.3%;
 }
 
-$header-height : 2.7em;
 
 #header {
     position: sticky;
@@ -25,7 +24,6 @@ $header-height : 2.7em;
     left: 0;
     padding: 0.5em;
     width: 100%;
-    height: $header-height;
     background-color: rgba($main-bg-dark-color, 0.7);
     backdrop-filter: blur(4px);
     border-bottom: solid 1px $main-border-color;
