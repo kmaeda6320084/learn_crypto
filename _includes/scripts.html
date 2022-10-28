@@ -17,11 +17,19 @@
         position = Math.max(Math.min(position + delta, 0), -height, -scrollY);
         header.style.top = `${position}px`;
     });
-
-    window.addEventListener("load", () => {
-        let height = header.scrollHeight;
-        let stylesheet = new CSSStyleSheet();
+    const stylesheet = new CSSStyleSheet();
+    document.adoptedStyleSheets.push(stylesheet);
+    const onResizeHeader = (height) =>
+    {
         stylesheet.replaceSync(`* { scroll-margin-top: ${height}px; }`);
-        document.adoptedStyleSheets.push(stylesheet);
+    };
+
+    const resizeObserver = new ResizeObserver(entries => {
+        const [entry] = entries;
+        const height = entry.borderBoxSize.inlineSize;
+        onResizeHeader(height);
     });
+    resizeObserver.observe(header);
+    onResizeHeader(header.scrollHeight);
+
 </script>
