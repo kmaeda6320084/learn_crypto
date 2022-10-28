@@ -177,6 +177,10 @@ code:not([class]) {
     background-color: $main-bg-color;
     border: solid 1px $main-border-color;
 
+    ul {
+        margin: none;
+    }
+
     li {
         list-style-type: none;
     }
