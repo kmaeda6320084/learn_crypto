@@ -3,9 +3,8 @@ layout: default
 ---
 {% capture header %}
 <h2>{{ page.title }}</h2>
-<div style="margin-left: auto;" class="link-button-light dropdown">
-    <p>目次</p>
-    <div id="auto-toc-anchor-portrait" class="dropdown-content"></div>
+<div id="auto-toc-anchor-portrait" style="margin-left: auto;" class="link-button-light dropdown"
+    style="height: min-content">
 </div>
 {% endcapture %}
 {% include header.html content=header %}
@@ -44,11 +43,14 @@ layout: default
     function onresize() {
         const viewport = window.visualViewport;
         anchor_landscape.innerHTML = anchor_portrait.innerHTML = '';
-
+        const caption = "<p>目次</p>";
+        const toc = autoc.createTableOfContents(post_content);
         if (viewport.height > viewport.width) {//portrait
-            anchor_portrait.append(autoc.createTableOfContents(post_content));
+            const html = `${caption}<div class="dropdown-content">${toc}</div>`;
+            anchor_portrait.innerHTML = html;
         } else {//landscape
-            anchor_landscape.append(autoc.createTableOfContents(post_content));
+            const html = `${caption}${toc}`;
+            anchor_landscape.innerHTML = html;
         }
     }
 </script>

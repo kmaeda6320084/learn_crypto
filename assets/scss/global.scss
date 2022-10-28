@@ -16,6 +16,8 @@ body {
     padding-bottom: 33.3%;
 }
 
+$header-height : 1.7em;
+
 #header {
     position: sticky;
     box-sizing: border-box;
@@ -23,6 +25,7 @@ body {
     left: 0;
     padding: 0.5em;
     width: 100%;
+    height: $header-height;
     background-color: rgba($main-bg-dark-color, 0.7);
     backdrop-filter: blur(4px);
     border-bottom: solid 1px $main-border-color;
@@ -46,7 +49,7 @@ hr {
 }
 
 h1 {
-    padding: 0.2em 0 0.2em 0;
+    padding: 0.2em 0;
     font-size: xx-large;
 }
 
