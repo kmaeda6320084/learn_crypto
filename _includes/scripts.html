@@ -10,7 +10,8 @@
 
     let scrollY = window.scrollY;
     let position = 0;
-    window.addEventListener("scroll", () => {
+    window.addEventListener("scroll", (e) => {
+        console.log(`scroll: ${e}`);
         let delta = (window.scrollY - scrollY) * speed;
         let height = header.scrollHeight;
         scrollY = window.scrollY;
@@ -21,6 +22,7 @@
     document.adoptedStyleSheets.push(stylesheet);
     const onResizeHeader = (height) =>
     {
+        console.log(`header resize: ${height}`);
         stylesheet.replaceSync(`* { scroll-margin-top: ${height}px; }`);
     };
 
