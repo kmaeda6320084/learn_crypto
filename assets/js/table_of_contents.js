@@ -1,41 +1,44 @@
-export function createTableOfContents(node) {
-    const headings = iterateHeading(node);
-    const list = document.createElement('ul');
-    list.append(...createItems(1, peekable(headings)));
-    return list;
-
-    function createItems(depth, iterator) {
-        const headingLevelRegex = /\d+$/;
-        const buffer = new Array();
-        do {
-            const current = iterator.peek();
-            if (current.done) break;
-            const [currentDepth] = current.value.nodeName.match(headingLevelRegex);
-            if (currentDepth < depth) break;
-            if (currentDepth == depth) {
-                iterator.next();
-                const item = document.createElement('li');
-                item.append(current.value.innerHTML);
-                buffer.push(item);
-            } else {
-                const item = document.createElement('ul');
-                item.append(...createItems(currentDepth, iterator));
-                buffer.push(item);
-            }
-        } while (true);
-
-        return buffer;
-    }
-
-    function* iterateHeading(root) {
-        for (const child of root.children) {
-            if (child instanceof HTMLHeadingElement) {
-                yield child;
-            }
-            yield* iterateHeading(child);
+window.autoc = {
+    createTableOfContents: function(node) {
+        const headings = iterateHeading(node);
+        const list = document.createElement('ul');
+        list.append(...createItems(1, peekable(headings)));
+        return list;
+    
+        function createItems(depth, iterator) {
+            const headingLevelRegex = /\d+$/;
+            const buffer = new Array();
+            do {
+                const current = iterator.peek();
+                if (current.done) break;
+                const [currentDepth] = current.value.nodeName.match(headingLevelRegex);
+                if (currentDepth < depth) break;
+                if (currentDepth == depth) {
+                    iterator.next();
+                    const item = document.createElement('li');
+                    item.append(current.value.innerHTML);
+                    buffer.push(item);
+                } else {
+                    const item = document.createElement('ul');
+                    item.append(...createItems(currentDepth, iterator));
+                    buffer.push(item);
+                }
+            } while (true);
+    
+            return buffer;
         }
+    
+        function* iterateHeading(root) {
+            for (const child of root.children) {
+                if (child instanceof HTMLHeadingElement) {
+                    yield child;
+                }
+                yield* iterateHeading(child);
+            }
+        }
+    
     }
-}
+};
 
 function peekable(iterator) {
     return {
