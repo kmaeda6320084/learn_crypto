@@ -170,11 +170,16 @@ code:not([class]) {
 .dropdown-content {
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 50%;
+    padding: 0.5em;
     transform: translate(-50%);
     display: none;
     background-color: $main-bg-color;
     border: solid 1px $main-color;
+
+    li {
+        list-style-type: none;
+    }
 }
 
 .dropdown:hover>.dropdown-content {
