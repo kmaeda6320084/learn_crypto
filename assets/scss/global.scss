@@ -39,8 +39,8 @@ body {
 }
 
 hr {
-    border-top: solid $main-border-color;
-    border-left: solid $main-border-color;
+    border-top: solid 1px $main-border-color;
+    border-left: solid 1px $main-border-color;
     border-bottom: none;
     border-right: none;
 }
@@ -161,4 +161,19 @@ code:not([class]) {
         grid-column: attr(data-grid-column);
         grid-row: attr(data-grid-row);
     }
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.dropdown:hover>.dropdown-content {
+    display: block;
 }
