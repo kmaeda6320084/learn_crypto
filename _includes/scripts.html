@@ -11,9 +11,8 @@
     let scrollY = window.scrollY;
     let position = 0;
     window.addEventListener("scroll", (e) => {
-        console.log(`scroll: ${delta}`);
-
         let delta = (window.scrollY - scrollY) * speed;
+        console.log(`scroll: ${delta}`);
         let height = header.scrollHeight;
         scrollY = window.scrollY;
         position = Math.max(Math.min(position + delta, 0), -height, -scrollY);
