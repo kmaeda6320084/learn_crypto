@@ -42,7 +42,7 @@ window.autoc = {
                 if (child instanceof HTMLHeadingElement) {
                     yield child;
                 }
-                yield* iterateHeading(child);
+                yield* iterateHeadings(child);
             }
         }
     

@@ -23,9 +23,9 @@ layout: default
     </p>
 </div>
 
-<div class="content-root">
+<div id="content-root">
     <div id="auto-toc-anchor-landscape" style="grid-area: nav-l"> </div>
-    <div class="post-content">
+    <div id="post-content">
         <hr>
         {{- content -}}
     </div>
@@ -34,6 +34,7 @@ layout: default
 <script>
     const anchor_portrait = document.getElementById("auto-toc-anchor-portrait");
     const anchor_landscape = document.getElementById("auto-toc-anchor-landscape");
+    const post_content = document.getElementById("post-content");
     onresize();
     window.addEventListener('resize', onresize);
 
@@ -42,9 +43,9 @@ layout: default
         anchor_landscape.innerHTML = anchor_portrait.innerHTML = '';
 
         if (viewport.height > viewport.width) {//portrait
-            anchor_portrait.append(autoc.createTableOfContents(document.body));
+            anchor_portrait.append(autoc.createTableOfContents(post_content));
         } else {//landscape
-            anchor_landscape.append(autoc.createTableOfContents(document.body));
+            anchor_landscape.append(autoc.createTableOfContents(post_content));
         }
     }
 </script>
