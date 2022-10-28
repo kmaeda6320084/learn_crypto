@@ -8,6 +8,8 @@
     const header = document.getElementById("header");
     const speed = 0.4;
 
+    let oldHash = document.location.hash;
+
     let scrollY = window.scrollY;
     let position = 0;
     window.addEventListener("scroll", (e) => {
