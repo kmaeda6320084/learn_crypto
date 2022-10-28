@@ -11,7 +11,7 @@
     let scrollY = window.scrollY;
     let position = 0;
     window.addEventListener("scroll", (e) => {
-        console.log(`scroll: ${e}`);
+        console.log(`scroll: ${Object.getOwnPropertyDescriptors(e)}`);
         let delta = (window.scrollY - scrollY) * speed;
         let height = header.scrollHeight;
         scrollY = window.scrollY;
@@ -20,15 +20,14 @@
     });
     const stylesheet = new CSSStyleSheet();
     document.adoptedStyleSheets.push(stylesheet);
-    const onResizeHeader = (height) =>
-    {
+    const onResizeHeader = (height) => {
         console.log(`header resize: ${height}`);
         stylesheet.replaceSync(`* { scroll-margin-top: ${height}px; }`);
     };
 
     const resizeObserver = new ResizeObserver(entries => {
         const [entry] = entries;
-        const height = entry.borderBoxSize.inlineSize;
+        const height = entry.borderBoxSize[0].inlineSize;
         onResizeHeader(height);
     });
     resizeObserver.observe(header);
