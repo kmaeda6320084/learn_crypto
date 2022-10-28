@@ -39,8 +39,8 @@ layout: default
 
     function onresize() {
         const viewport = window.visualViewport;
-        anchor_landscape.innerHTML = anchor_portrait.innerHTML = undefined;
-
+        anchor_landscape.innerHTML = anchor_portrait.innerHTML = '';
+ß
         if (viewport.height > viewport.width) {//portrait
             anchor_portrait.append(autoc.createTableOfContents(document.body));
         } else {//landscape
