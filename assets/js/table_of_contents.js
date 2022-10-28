@@ -1,8 +1,14 @@
 window.autoc = {
-    createTableOfContents: function(node) {
-        const headings = iterateHeading(node);
+    createTableOfContents: function(node, options={}) {
+        const headings = iterateHeadings(node);
+        let indexed;
+        if(options.hasOwnProperty('definedIdOnly')) {
+            indexed = hasId(headings);
+        } else {
+            indexed = coalesceId(headings);
+        }
         const list = document.createElement('ul');
-        list.append(...createItems(1, peekable(headings)));
+        list.append(...createItems(1, peekable(indexed)));
         return list;
     
         function createItems(depth, iterator) {
@@ -16,7 +22,10 @@ window.autoc = {
                 if (currentDepth == depth) {
                     iterator.next();
                     const item = document.createElement('li');
-                    item.append(current.value.innerHTML);
+                    const a = document.createElement('a');
+                    item.append(a);
+                    a.innerHTML = current.value.innerHTML;
+                    a.href = `#${current.value.id}`;
                     buffer.push(item);
                 } else {
                     const item = document.createElement('ul');
@@ -28,7 +37,7 @@ window.autoc = {
             return buffer;
         }
     
-        function* iterateHeading(root) {
+        function* iterateHeadings(root) {
             for (const child of root.children) {
                 if (child instanceof HTMLHeadingElement) {
                     yield child;
@@ -37,6 +46,23 @@ window.autoc = {
             }
         }
     
+        function* hasId(iterator){
+            for(const item of iterator) {
+                if(!!item.id)
+                    return item;
+            }
+        }
+
+        function* coalesceId(iterator)
+        {
+            let index = 0;
+            const uuid = window.crypto.randomUUID();
+            for(const item of iterator) {
+                item.id ??= `auto-toc-${uuid}-${index}`;
+                index++;
+                yield item;
+            }
+        }
     }
 };
 
