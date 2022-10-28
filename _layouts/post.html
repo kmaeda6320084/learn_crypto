@@ -46,10 +46,10 @@ layout: default
         const caption = "<p>目次</p>";
         const toc = autoc.createTableOfContents(post_content);
         if (viewport.height > viewport.width) {//portrait
-            const html = `${caption}<div class="dropdown-content">${toc}</div>`;
+            const html = `${caption}<div class="dropdown-content">${toc.outerHTML}</div>`;
             anchor_portrait.innerHTML = html;
         } else {//landscape
-            const html = `${caption}${toc}`;
+            const html = `${caption}${toc.outerHTML}`;
             anchor_landscape.innerHTML = html;
         }
     }
