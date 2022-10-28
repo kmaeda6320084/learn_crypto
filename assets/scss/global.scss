@@ -19,7 +19,6 @@ body {
 
 #header {
     position: sticky;
-    box-sizing: border-box;
     align-items: center;
     top: 0;
     left: 0;
@@ -171,9 +170,12 @@ code:not([class]) {
 
 .dropdown-content {
     position: absolute;
-    top: 0;
+    top: 100%;
     left: 0;
+    transform: translate(-50%);
     display: none;
+    background-color: $main-bg-color;
+    border: solid 1px $main-color;
 }
 
 .dropdown:hover>.dropdown-content {
