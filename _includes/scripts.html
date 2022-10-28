@@ -11,7 +11,8 @@
     let scrollY = window.scrollY;
     let position = 0;
     window.addEventListener("scroll", (e) => {
-        console.log(`scroll: ${Object.getOwnPropertyDescriptors(e)}`);
+        console.log(`scroll: ${JSON.stringify(Object.getOwnPropertyDescriptors(e))}`);
+
         let delta = (window.scrollY - scrollY) * speed;
         let height = header.scrollHeight;
         scrollY = window.scrollY;
