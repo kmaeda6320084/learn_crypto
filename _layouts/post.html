@@ -3,7 +3,7 @@ layout: default
 ---
 {% capture header %}
 <h2>{{ page.title }}</h2>
-<div id="auto-toc-anchor-portrait" style="margin-left: auto; height: min-content;" class="dropdown">
+<div id="auto-toc-anchor-portrait" style="margin-left: auto; height: min-content;">
 </div>
 {% endcapture %}
 {% include header.html content=header %}
@@ -25,7 +25,7 @@ layout: default
 </div>
 
 <div id="content-root">
-    <div id="auto-toc-anchor-landscape" style="grid-area: nav-l"> </div>
+    <div id="auto-toc-anchor-landscape" style="grid-area: nav-l; position: sticky;"> </div>
     <div id="post-content">
         <hr>
         {{- content -}}
@@ -45,7 +45,7 @@ layout: default
         const caption = "<p>目次</p>";
         const toc = autoc.createTableOfContents(post_content);
         if (viewport.height > viewport.width) {//portrait
-            const html = `<div class="link-button-light">${caption}<div class="dropdown-content">${toc.outerHTML}</div></div>`;
+            const html = `<div class="link-button-light dropdown">${caption}<div class="dropdown-content">${toc.outerHTML}</div></div>`;
             anchor_portrait.innerHTML = html;
         } else {//landscape
             const html = `${caption}${toc.outerHTML}`;
