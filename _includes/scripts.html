@@ -17,7 +17,18 @@
         scrollY = window.scrollY;
         position = Math.max(Math.min(position + delta, 0), -height, -scrollY);
         header.style.top = `${position}px`;
+
+        // if navigated, reset header position
+        const hash = document.location.hash;
+        if (hash === oldHash) return;
+        position = 0;
+        header.style.top = `${position}px`;
+
+        oldHash = hash;
     });
+
+
+    // scroll margin
     const stylesheet = new CSSStyleSheet();
     document.adoptedStyleSheets.push(stylesheet);
     const onResizeHeader = (height) => {
@@ -32,5 +43,4 @@
     });
     resizeObserver.observe(header);
     onResizeHeader(header.scrollHeight);
-
 </script>
