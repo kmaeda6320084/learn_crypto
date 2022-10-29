@@ -19,26 +19,26 @@ $$f(n) = O(g(n))$$
 
 特に時間計算量が$O(g(n))~$(ただし$g$は多項式)であるアルゴリズムを多項式時間アルゴリズムという．
 
-## 鍵空間(key space) {: #key_space }
+## 鍵空間(key space) {:#key_space}
 鍵になる値の集合のこと．鍵の長さ(ビット長)に比例して爆発的に鍵空間は広くなる．暗号によっては鍵として選択できる値に制限があるため，単純に鍵の長さに比例しない場合もある．
 
 以降，特に断りのない限り復号鍵空間，暗号鍵空間をそれぞれ$\mathbb{K}_D$, $\mathbb{K}_E$とし，復号，暗号化に同じ鍵を使う場合のみ鍵空間を$\mathbb{K}$とする．
 
-## 平文空間(plain text space) {: #plain_text_space }
+## 平文空間(plain text space) {:#plain_text_space}
 平文全ての集合のこと．基本的には任意の文字列となり非可算濃度をもつ．平文に条件を考える場合もあり，暗号の強度は条件によって変わることもある．
 
 暗号化関数の定義域であり，復号関数の値域となる．
 
 以降，特に断りのない限り平文空間を $\mathbb{M}$ とする．
 
-## 暗号文空間(ciphertext space) {: #ciphertext_space }
+## 暗号文空間(ciphertext space) {:#ciphertext_space}
 暗号文全ての集合のこと．符号の集合となる．決定的な暗号では暗号化鍵と平文空間が決まれば暗号文空間も決定されるが，決定的でない暗号では暗号化鍵と平文空間のみでは暗号文空間が決定できない．
 
 暗号化関数の値域であり，復号関数の定義域となる．
 
 以降，特に断りのない限り暗号文空間を $\mathbb{C}$ とする．ただし，鍵を明示的に指定して $\mathbb{C}_k$と添え字付きで表すこともある．
 
-## オラクル(oracle) {: #oracle }
+## オラクル(oracle) {:#oracle}
 要求に対してデータを返す存在のこと．要求する側は計算方法を知らないことがポイント．
 
 例えば関数$f$を計算するオラクルは
@@ -54,11 +54,11 @@ flowchart LR
 暗号化を行うオラクルを暗号化オラクル．復号を行うオラクルを復号オラクルという．
 
 日本語だと神託という訳になる．計算方法を知らずに神に答えを聞くようなイメージ？
-## ノンス(nonce){: #nonce }
+## ノンス(nonce){:#nonce}
 通信において利用する使い捨ての乱数のこと．
 [リプレイ攻撃]({% post_url 2022-10-29-attack-basis %}#replay_attack)を防ぐために利用する．
 
-## ハッシュ(hash) {: #hash }
+## ハッシュ(hash) {:#hash}
 入力が与えられたとき決められた長さの値を返す関数またはその値のこと．
 明確にするために値のことをハッシュ値，関数のことをハッシュ関数ということもある．
 
@@ -68,17 +68,17 @@ flowchart LR
 
 ハッシュ関数は改ざん防止や，変更の検知などになどのために利用される．
 
-## スキーマ(schema) {: #schema }
+## スキーマ(schema) {:#schema}
 文章やデータの構造のこと．
 
 通信ではバイト列を送受信するためバイト列を解釈する必要があり，このバイト列の解釈の方法をスキーマという．
 
-## プロトコル(protocol) {: #protocol }
+## プロトコル(protocol) {:#protocol}
 決まった手順のこと．特に複数人で行う手続きの共通したルールのこと．
 
 通信では相手からのメッセージを待機したり解釈したりするため，共通したルールが必要である．
 
-## 鍵交換 (key exchange) {: key exchange }
+## 鍵交換 (key exchange) {:#key_exchange}
 相手に鍵をとどけること．復号鍵を盗聴されないように鍵交換する問題のことを鍵交換問題という．
 
 ### 公開鍵暗号方式
@@ -137,7 +137,7 @@ $K_{X, Y} = K_{Y, X}$であるため，受信者と送信者は鍵を共有で�
 
 # 暗号の分類
 
-## 共通鍵暗号(common key cryptography) {: #commonkey_crypto }
+## 共通鍵暗号(common key cryptography) {:#commonkey_crypto}
 暗号化と復号に同じ鍵を用いる暗号のこと．
 $$ (G: \mathbb{N} \rightarrow \mathbb{K}, E: (\mathbb{K}, \mathbb{M})\rightarrow \mathbb{C}, D: (\mathbb{K}, \mathbb{C})\rightarrow \mathbb{M}) $$
 の三つ組で表され，$G$は鍵生成関数，$E$は暗号化関数，$D$は復号関数である．
@@ -146,7 +146,7 @@ $$ (G: \mathbb{N} \rightarrow \mathbb{K}, E: (\mathbb{K}, \mathbb{M})\rightarrow
 $$ E: \mathbb{K} \rightarrow \mathbb{M} \rightarrow \mathbb{C}\\ D: \mathbb{K} \rightarrow \mathbb{C} \rightarrow \mathbb{M} $$
 とする．
 
-## 公開鍵暗号(public key cryptography) {: #publickey_crypto }
+## 公開鍵暗号(public key cryptography) {:#publickey_crypto}
 暗号化と復号に異なる鍵を用いる暗号のこと．非対称鍵暗号ともいわれる．
 $$ (G: \mathbb{N} \rightarrow (\mathbb{K}_E, \mathbb{K}_D), E: (\mathbb{K}_E, \mathbb{M})\rightarrow \mathbb{C}, D: (\mathbb{K}_D, \mathbb{C})\rightarrow \mathbb{M}) $$
 の三つ組で表され，$G$は鍵生成関数，$E$は暗号化関数，$D$は復号関数である．
@@ -154,16 +154,16 @@ $$ (G: \mathbb{N} \rightarrow (\mathbb{K}_E, \mathbb{K}_D), E: (\mathbb{K}_E, \m
 ここでは簡易化のために
 $$ E: \mathbb{K}_E \rightarrow \mathbb{M} \rightarrow \mathbb{C}\\ D: \mathbb{K}_D \rightarrow \mathbb{C} \rightarrow \mathbb{M} $$
 とする．
-## 決定的暗号(deterministic encryption) {: #deterministic_encryption }
+## 決定的暗号(deterministic encryption) {:#deterministic_encryption}
 鍵と平文が決まれば同じ暗号文が出力される暗号のこと．
 
-## 確率的暗号(probabilistic encryption) {: #probabilistic_encryption }
+## 確率的暗号(probabilistic encryption) {:#probabilistic_encryption}
 鍵と平文が決まっても異なる暗号文が出力される暗号のこと．
 
-## ブロック暗号(block cipher) {: #block_cipher }
+## ブロック暗号(block cipher) {:#block_cipher}
 特定のバイト数のブロックごとに暗号化する暗号のこと．
 
 入力のバイト数がブロックサイズの倍数でない場合，入力の端数は穴埋め用の数(パディング, padding)で埋められる．
 
-## ストリーム暗号(stream cipher) {: #stream_cipher }
+## ストリーム暗号(stream cipher) {:#stream_cipher}
 1ビットまたは1バイトごとに暗号化する暗号のこと．

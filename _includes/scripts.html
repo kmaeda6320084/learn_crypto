@@ -1,7 +1,10 @@
 <!-- highlight.js -->
 <script>hljs.highlightAll();</script>
 <!-- mermaid -->
-<script>mermaid.initialize({ startOnLoad: true });</script>
+<script>
+    mermaid.initialize({ startOnLoad: true });
+    mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+</script>
 
 <!-- header -->
 <script type="text/javascript">
