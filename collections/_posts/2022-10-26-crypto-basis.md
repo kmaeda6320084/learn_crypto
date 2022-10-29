@@ -7,7 +7,7 @@ tags: crypto
 
 ## big-O記法
 関数$f, g$に対してある$n_0, c$が存在して，$\forall n \geq n_0$において$f(n) \leq c g(n)$が成立するとき
-$[f(n) = O(g(n))]$
+$$f(n) = O(g(n))$$
 と書く．
 
 >$f(n)$が$cg(n)$**以下**であればいいことに注意.
@@ -139,20 +139,20 @@ $K_{X, Y} = K_{Y, X}$であるため，受信者と送信者は鍵を共有で�
 
 ## 共通鍵暗号(common key cryptography) {:#commonkey_crypto}
 暗号化と復号に同じ鍵を用いる暗号のこと．
-$[ (G: \mathbb{N} \rightarrow \mathbb{K}, E: (\mathbb{K}, \mathbb{M})\rightarrow \mathbb{C}, D: (\mathbb{K}, \mathbb{C})\rightarrow \mathbb{M}) ]$
+$$ (G: \mathbb{N} \rightarrow \mathbb{K}, E: (\mathbb{K}, \mathbb{M})\rightarrow \mathbb{C}, D: (\mathbb{K}, \mathbb{C})\rightarrow \mathbb{M}) $$
 の三つ組で表され，$G$は鍵生成関数，$E$は暗号化関数，$D$は復号関数である．
 
 ここでは簡易化のために
-$[ E: \mathbb{K} \rightarrow \mathbb{M} \rightarrow \mathbb{C}\\ D: \mathbb{K} \rightarrow \mathbb{C} \rightarrow \mathbb{M} ]$
+$$ E: \mathbb{K} \rightarrow \mathbb{M} \rightarrow \mathbb{C}\\ D: \mathbb{K} \rightarrow \mathbb{C} \rightarrow \mathbb{M} $$
 とする．
 
 ## 公開鍵暗号(public key cryptography) {:#publickey_crypto}
 暗号化と復号に異なる鍵を用いる暗号のこと．非対称鍵暗号ともいわれる．
-$[ (G: \mathbb{N} \rightarrow (\mathbb{K}_E, \mathbb{K}_D), E: (\mathbb{K}_E, \mathbb{M})\rightarrow \mathbb{C}, D: (\mathbb{K}_D, \mathbb{C})\rightarrow \mathbb{M}) ]$
+$$ (G: \mathbb{N} \rightarrow (\mathbb{K}_E, \mathbb{K}_D), E: (\mathbb{K}_E, \mathbb{M})\rightarrow \mathbb{C}, D: (\mathbb{K}_D, \mathbb{C})\rightarrow \mathbb{M}) $$
 の三つ組で表され，$G$は鍵生成関数，$E$は暗号化関数，$D$は復号関数である．
 
 ここでは簡易化のために
-$[ E: \mathbb{K}_E \rightarrow \mathbb{M} \rightarrow \mathbb{C}\\ D: \mathbb{K}_D \rightarrow \mathbb{C} \rightarrow \mathbb{M} ]$
+$$ E: \mathbb{K}_E \rightarrow \mathbb{M} \rightarrow \mathbb{C}\\ D: \mathbb{K}_D \rightarrow \mathbb{C} \rightarrow \mathbb{M} $$
 とする．
 ## 決定的暗号(deterministic encryption) {:#deterministic_encryption}
 鍵と平文が決まれば同じ暗号文が出力される暗号のこと．
