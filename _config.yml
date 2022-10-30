@@ -8,6 +8,7 @@ kramdown:
   highlighter: none
   syntax_highlighter_opts:
     disable: true
+  math_engine: null
 
 sass:
   sass_dir: assets/scss
