@@ -3,12 +3,9 @@ url: https://kmaeda6320084.github.io
 baseurl: /learn_crypto
 
 markdown: CommonMarkGhPages
-kramdown:
-  parse_block_html: true
-  highlighter: none
-  math_engine: mathjax
-  syntax_highlighter_opts:
-    disable: true
+commonmark:
+  options: ["UNSAFE"]
+  extensions: ["strikethrough"]
 
 sass:
   sass_dir: assets/scss
