@@ -7,25 +7,25 @@ last_modified: 2022-10-30
 # 暗号の前に
 
 ## big-O記法
-関数$f, g$に対してある$n_0, c$が存在して，$\forall n \geq n_0$において$f(n) \leq c g(n)$が成立するとき
-$$f(n) = O(g(n))$$
+関数\(f, g\)に対してある\(n_0, c\)が存在して，\(\forall n \geq n_0\)において\(f(n) \leq c g(n)\)が成立するとき
+\[f(n) = O(g(n))\]
 と書く．
 
 <div class="note warn">
-$f(n)$が$cg(n)$**以下**であればいいことに注意.
+\(f(n)\)が\(cg(n)\)**以下**であればいいことに注意.
 
-$f(n) = O(n)$なら$f(n )= O(n^2)$でもある．
+\(f(n) = O(n)\)なら\(f(n )= O(n^2)\)でもある．
 </div>
 
 プログラムではループの回数，再帰の回数が支配的でありこれらを計数することで計算量を見積もることができる．
 
-特に時間計算量が$O(g(n))~$(ただし$g$は多項式)であるアルゴリズムを多項式時間アルゴリズムという．
+特に時間計算量が\(O(g(n))~\)(ただし\(g\)は多項式)であるアルゴリズムを多項式時間アルゴリズムという．
 
 {:#key_space}
 ## 鍵空間(key space)
 鍵になる値の集合のこと．鍵の長さ(ビット長)に比例して爆発的に鍵空間は広くなる．暗号によっては鍵として選択できる値に制限があるため，単純に鍵の長さに比例しない場合もある．
 
-以降，特に断りのない限り復号鍵空間，暗号鍵空間をそれぞれ$\mathbb{K}_D$, $\mathbb{K}_E$とし，復号，暗号化に同じ鍵を使う場合のみ鍵空間を$\mathbb{K}$とする．
+以降，特に断りのない限り復号鍵空間，暗号鍵空間をそれぞれ\(\mathbb{K}_D\), \(\mathbb{K}_E\)とし，復号，暗号化に同じ鍵を使う場合のみ鍵空間を\(\mathbb{K}\)とする．
 
 {:#plain_text_space}
 ## 平文空間(plain text space)
@@ -33,7 +33,7 @@ $f(n) = O(n)$なら$f(n )= O(n^2)$でもある．
 
 暗号化関数の定義域であり，復号関数の値域となる．
 
-以降，特に断りのない限り平文空間を $\mathbb{M}$ とする．
+以降，特に断りのない限り平文空間を \(\mathbb{M}\) とする．
 
 {:#ciphertext_space}
 ## 暗号文空間(ciphertext space)
@@ -41,13 +41,13 @@ $f(n) = O(n)$なら$f(n )= O(n^2)$でもある．
 
 暗号化関数の値域であり，復号関数の定義域となる．
 
-以降，特に断りのない限り暗号文空間を $\mathbb{C}$ とする．ただし，鍵を明示的に指定して $\mathbb{C}_k$と添え字付きで表すこともある．
+以降，特に断りのない限り暗号文空間を \(\mathbb{C}\) とする．ただし，鍵を明示的に指定して \(\mathbb{C}_k\)と添え字付きで表すこともある．
 
 {:#oracle}
 ## オラクル(oracle)
 要求に対してデータを返す存在のこと．要求する側は計算方法を知らないことがポイント．
 
-例えば関数$f$を計算するオラクルは
+例えば関数\(f\)を計算するオラクルは
 ```mermaid
 flowchart LR
     user[ユーザー];
@@ -55,7 +55,7 @@ flowchart LR
     user -- x --> oracle;
     oracle -- "f(x)" --> user;
 ```
-このようにユーザーの要求$x$に応じて$f(x)$を返す．
+このようにユーザーの要求\(x\)に応じて\(f(x)\)を返す．
 
 暗号化を行うオラクルを暗号化オラクル．復号を行うオラクルを復号オラクルという．
 
@@ -140,11 +140,11 @@ sequenceDiagram
     note over Server: Kyxを計算
 
 ```
-ただし${\tt Ka} = G^{\tt a} \mod P$とし，${\tt Kab} = (G^{\tt a} \mod P)^{\tt b} \mod P$とする．
+ただし\({\tt Ka} = G^{\tt a} \mod P\)とし，\({\tt Kab} = (G^{\tt a} \mod P)^{\tt b} \mod P\)とする．
 
-ここで$(G^{\tt a} \mod P)^{\tt b} \mod P = G^{\tt ab} \mod P$であるため，$\tt Kxy = Kyx$となる．
+ここで\((G^{\tt a} \mod P)^{\tt b} \mod P = G^{\tt ab} \mod P\)であるため，\(\tt Kxy = Kyx\)となる．
 
-よって受信者と送信者は鍵を共有できており，$\tt Kx, Ky$からは$\tt Kxy, Kyx$を計算できないため盗聴者は鍵を知ることができない．
+よって受信者と送信者は鍵を共有できており，\(\tt Kx, Ky\)からは\(\tt Kxy, Kyx\)を計算できないため盗聴者は鍵を知ることができない．
 
 楕円曲線上の離散対数問題を利用する変種(ECDH)が存在する．
 
@@ -154,26 +154,26 @@ sequenceDiagram
 {:#commonkey_crypto}
 ## 共通鍵暗号(common key cryptography)
 暗号化と復号に同じ鍵を用いる暗号のこと．
-$$ (G: \mathbb{N} \rightarrow \mathbb{K}, E: (\mathbb{K}, \mathbb{M})\rightarrow \mathbb{C}, D: (\mathbb{K}, \mathbb{C})\rightarrow \mathbb{M}) $$
-の三つ組で表され，$G$は鍵生成関数，$E$は暗号化関数，$D$は復号関数である．
+\[ (G: \mathbb{N} \rightarrow \mathbb{K}, E: (\mathbb{K}, \mathbb{M})\rightarrow \mathbb{C}, D: (\mathbb{K}, \mathbb{C})\rightarrow \mathbb{M}) \]
+の三つ組で表され，\(G\)は鍵生成関数，\(E\)は暗号化関数，\(D\)は復号関数である．
 
 ここでは簡易化のために
-$$ E: \mathbb{K} \rightarrow \mathbb{M} \rightarrow \mathbb{C}\\ D: \mathbb{K} \rightarrow \mathbb{C} \rightarrow \mathbb{M} $$
+\[ E: \mathbb{K} \rightarrow \mathbb{M} \rightarrow \mathbb{C}\\ D: \mathbb{K} \rightarrow \mathbb{C} \rightarrow \mathbb{M} \]
 とする．
 
-これは$E$を鍵が与えられたら暗号化オラクルを返す関数とし，$D$を鍵が与えられたら復号オラクルを返す関数としている．
+これは\(E\)を鍵が与えられたら暗号化オラクルを返す関数とし，\(D\)を鍵が与えられたら復号オラクルを返す関数としている．
 
 {:#publickey_crypto}
 ## 公開鍵暗号(public key cryptography)
 暗号化と復号に異なる鍵を用いる暗号のこと．非対称鍵暗号ともいわれる．
-$$ (G: \mathbb{N} \rightarrow (\mathbb{K}_E, \mathbb{K}_D), E: (\mathbb{K}_E, \mathbb{M})\rightarrow \mathbb{C}, D: (\mathbb{K}_D, \mathbb{C})\rightarrow \mathbb{M}) $$
-の三つ組で表され，$G$は鍵生成関数，$E$は暗号化関数，$D$は復号関数である．
+\[ (G: \mathbb{N} \rightarrow (\mathbb{K}_E, \mathbb{K}_D), E: (\mathbb{K}_E, \mathbb{M})\rightarrow \mathbb{C}, D: (\mathbb{K}_D, \mathbb{C})\rightarrow \mathbb{M}) \]
+の三つ組で表され，\(G\)は鍵生成関数，\(E\)は暗号化関数，\(D\)は復号関数である．
 
 ここでは簡易化のために
-$$ E: \mathbb{K}_E \rightarrow \mathbb{M} \rightarrow \mathbb{C}\\ D: \mathbb{K}_D \rightarrow \mathbb{C} \rightarrow \mathbb{M} $$
+\[ E: \mathbb{K}_E \rightarrow \mathbb{M} \rightarrow \mathbb{C}\\ D: \mathbb{K}_D \rightarrow \mathbb{C} \rightarrow \mathbb{M} \]
 とする．
 
-これは$E$を鍵が与えられたら暗号化オラクルを返す関数とし，$D$を鍵が与えられたら復号オラクルを返す関数としている．
+これは\(E\)を鍵が与えられたら暗号化オラクルを返す関数とし，\(D\)を鍵が与えられたら復号オラクルを返す関数としている．
 
 {:#deterministic_encryption}
 ## 決定的暗号(deterministic encryption)
@@ -196,28 +196,28 @@ $$ E: \mathbb{K}_E \rightarrow \mathbb{M} \rightarrow \mathbb{C}\\ D: \mathbb{K}
 
 # 暗号の数学
 ## 互いに素(coprime)
-二つの整数$a, b$が互いに素であるとは$a, b$をともに割り切る整数が$1$のみであることである．またこれは，$gcd(a, b) = 1$であることと同値である
+二つの整数\(a, b\)が互いに素であるとは\(a, b\)をともに割り切る整数が\(1\)のみであることである．またこれは，\(gcd(a, b) = 1\)であることと同値である
 {:#euler_phi_function}
 ## オイラー関数(euler's phi function)
-オイラー関数は自然数から自然数への関数$\phi: \mathbb{N} \rightarrow \mathbb{N}$であり， $\phi(n)$は$n$以下の$n$と互いに素な数の個数を返す．
+オイラー関数は自然数から自然数への関数\(\phi: \mathbb{N} \rightarrow \mathbb{N}\)であり， \(\phi(n)\)は\(n\)以下の\(n\)と互いに素な数の個数を返す．
 
 ### 例
-$\phi(1) = 1 = |\{1\}|$
+\(\phi(1) = 1 = |\{1\}|\)
 
-$\phi(10) = 4 = |\{1, 3, 7, 9\}|$
+\(\phi(10) = 4 = |\{1, 3, 7, 9\}|\)
 
 {:#fermat_little_theorem}
 ## フェルマーの小定理(fermat's little theorem)
-$p$を素数，$a$を整数としたとき，
-$$ a^p \equiv a \pmod p $$
-であることであり，$a$が$p$と互いに素であるとき
-$$ a^{p - 1} \equiv 1 \pmod p$$
+\(p\)を素数，\(a\)を整数としたとき，
+\[ a^p \equiv a \pmod p \]
+であることであり，\(a\)が\(p\)と互いに素であるとき
+\[ a^{p - 1} \equiv 1 \pmod p\]
 が成立することを主張する定理．
 
 これを法が素数でなくても成立するように拡張したオイラーの定理が存在する．
 
 {:#euler_theorem}
 ## オイラーの定理(euler's theorem)
-$m$を整数とし, $a$を$m$と互いに素な整数とする．このとき
-$$ a^{\phi(m)} \equiv 1 \pmod m $$
+\(m\)を整数とし, \(a\)を\(m\)と互いに素な整数とする．このとき
+\[ a^{\phi(m)} \equiv 1 \pmod m \]
 を主張する．

@@ -8,12 +8,6 @@ kramdown:
   highlighter: none
   syntax_highlighter_opts:
     disable: true
-  math_engine_opts:
-    tex:
-      inlineMath:
-        - ['$', '$']
-      displayMath:
-        - ['$$', '$$']
 
 sass:
   sass_dir: assets/scss
