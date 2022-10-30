@@ -184,16 +184,17 @@ code:not([class]) {
 .note {
     width: auto;
     margin: 1em;
+    padding: 1em;
 
     &.note {
-        background-color: #609047
+        background-color: #54823a
     }
 
     &.warn {
-        background-color: #9dac53;
+        background-color: #867c3c;
     }
 
     &.alert {
-        background-color: #9a4f47;
+        background-color: #8f4a42;
     }
 }
