@@ -41,13 +41,14 @@
         });
 
         const macros = {};
-        for (let element of document.body.querySelectorAll('script[type="text/tex"]')) {
-            const text = katex.renderToString(element.textContent, {
-                throwOnError: false,
-                macros,
-            });
 
-            element.replaceWith(text);
+        for (let element of document.body.querySelectorAll('script[type="text/tex"]')) {
+            katex.render(element.textContent, element, {
+                throwOnError: false,
+                macros
+            });
+            const children = element.children;
+            element.replaceWith(children);
         }
     });
 </script>
