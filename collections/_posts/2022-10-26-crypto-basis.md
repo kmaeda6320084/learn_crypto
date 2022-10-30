@@ -157,6 +157,8 @@ $$ (G: \mathbb{N} \rightarrow \mathbb{K}, E: (\mathbb{K}, \mathbb{M})\rightarrow
 $$ E: \mathbb{K} \rightarrow \mathbb{M} \rightarrow \mathbb{C}\\ D: \mathbb{K} \rightarrow \mathbb{C} \rightarrow \mathbb{M} $$
 とする．
 
+これは$E$を鍵が与えられたら暗号化オラクルを返す関数とし，$D$を鍵が与えられたら復号オラクルを返す関数としている．
+
 {:#publickey_crypto}
 ## 公開鍵暗号(public key cryptography)
 暗号化と復号に異なる鍵を用いる暗号のこと．非対称鍵暗号ともいわれる．
@@ -166,6 +168,8 @@ $$ (G: \mathbb{N} \rightarrow (\mathbb{K}_E, \mathbb{K}_D), E: (\mathbb{K}_E, \m
 ここでは簡易化のために
 $$ E: \mathbb{K}_E \rightarrow \mathbb{M} \rightarrow \mathbb{C}\\ D: \mathbb{K}_D \rightarrow \mathbb{C} \rightarrow \mathbb{M} $$
 とする．
+
+これは$E$を鍵が与えられたら暗号化オラクルを返す関数とし，$D$を鍵が与えられたら復号オラクルを返す関数としている．
 
 {:#deterministic_encryption}
 ## 決定的暗号(deterministic encryption)

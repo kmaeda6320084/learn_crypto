@@ -6,7 +6,8 @@ tags: crypto
 # 攻撃モデル
 
 # 攻撃の手法
-## リプレイ攻撃(replay attack){: #replay_attack }
+{: #replay_attack }
+## リプレイ攻撃(replay attack)
 以前に流出した復号鍵を利用して以降の通信を盗聴する攻撃のこと．
 
 暗号化に同じ鍵を複数回利用するとこの攻撃を利用されることになる．
