@@ -156,6 +156,8 @@ code:not([class]) {
     top: 100%;
     left: 50%;
     padding: 0.5em;
+    width: max-content;
+    height: max-content;
 
     transform: translate(-50%);
     display: none;
