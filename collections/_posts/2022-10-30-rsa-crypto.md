@@ -33,7 +33,7 @@ $(N, e) = p_k$とし，平文を$m \in \mathbb{N}_{<N}$とする．
 
 # 復号関数
 復号関数$d$は復号鍵$s_k$を受け取り復号オラクル$d^\prime : \mathbb{N}_{<N} \rightarrow \mathbb{N}_{<N}$を返す関数である．
-ただし，<div>$\mathbb{N}_{<N} = \{n \in \mathbb{N} ~|~ 0 \leq n < N \}$</div>とする．
+ただし，"$\mathbb{N}_{<N} = \{n \in \mathbb{N} ~|~ 0 \leq n < N \}$"とする．
 
 ## $e^\prime$のアルゴリズム
 $(N, e) = p_k$とし，暗号文を$c \in \mathbb{N}_{<N}$とする．
