@@ -36,7 +36,7 @@ RSA暗号は[公開鍵暗号]({% post_url 2022-10-26-crypto-basis %}#commonkey_c
 復号関数$d$は復号鍵$s_k$を受け取り復号オラクル`d^\prime : \mathbb{N}_{<N} \rightarrow \mathbb{N}_{<N}`を返す関数である．
 ただし，`\mathbb{N}_{<N} = \{n \in \mathbb{N} ~|~ 0 \leq n < N \}`とする．
 
-## $e^\prime$のアルゴリズム
+## $d^\prime$のアルゴリズム
 $(N, e) = p_k$とし，暗号文を$c \in \mathbb{N}_{<N}$とする．
 
 1. $c^{s_k} \mod N$を出力する．
