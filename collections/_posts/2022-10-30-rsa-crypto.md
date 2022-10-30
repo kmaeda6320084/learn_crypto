@@ -32,8 +32,8 @@ $(N, e) = p_k$とし，平文を$m \in \mathbb{N}_{<N}$とする．
 
 
 # 復号関数
-復号関数$d$は復号鍵$s_k$を受け取り復号オラクル<div>$d^\prime : \mathbb{N}_{<N} \rightarrow \mathbb{N}_{<N}$</div>を返す関数である．
-ただし，<div>$\mathbb{N}_{<N} = \{n \in \mathbb{N} ~|~ 0 \leq n < N \}$</div>とする．
+復号関数$d$は復号鍵$s_k$を受け取り復号オラクル{% raw %}$d^\prime : \mathbb{N}_{<N} \rightarrow \mathbb{N}_{<N}${% endraw %}を返す関数である．
+ただし，{% raw %}$\mathbb{N}_{<N} = \{n \in \mathbb{N} ~|~ 0 \leq n < N \}$ {% endraw %}とする．
 
 ## $e^\prime$のアルゴリズム
 $(N, e) = p_k$とし，暗号文を$c \in \mathbb{N}_{<N}$とする．
