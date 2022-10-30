@@ -127,21 +127,23 @@ sequenceDiagram
 
     Server ->> Client: P, G
     note over Tapper: P, Gを知る
-    note over Client: P-2より小さい素数Yを生成
-    note over Server: P-2より小さい素数Xを生成
+    note over Client: P-2より小さい素数yを生成
+    note over Server: P-2より小さい素数xを生成
     
-    Client ->> Server: $K_Y$を送信
-    note over Tapper: $K_Y$を知る
-    Server ->> Client: $K_X$を送信
-    note over Tapper: $K_X$を知る
+    Client ->> Server: Kyを送信
+    note over Tapper: Kyを知る
+    Server ->> Client: Kxを送信
+    note over Tapper: Kxを知る
 
-    note over Client: $K_{X, Y}$を計算
-    note over Server: $K_{Y, X}$を計算
+    note over Client: Kxyを計算
+    note over Server: Kyxを計算
 
 ```
-ただし$K_a = G^a \mod P$とし，$K_{a, b, \cdots ,z} = (K_{a, b, \cdots ,y})^z \mod P$とする．
+ただし${\tt Ka} = G^{\tt a} \mod P$とし，${\tt Kab} = (G^{\tt a} \mod P)^{\tt b} \mod P$とする．
 
-$K_{X, Y} = K_{Y, X}$であるため，受信者と送信者は鍵を共有できており，$K_X, K_Y$からは$K_{X, Y}$を計算できないため盗聴者は鍵を知ることができない．
+ここで$(G^{\tt a} \mod P)^{\tt b} \mod P = G^{\tt ab} \mod P$であるため，$\tt Kxy = Kyx$となる．
+
+よって受信者と送信者は鍵を共有できており，$\tt Kx, Ky$からは$\tt Kxy, Kyx$を計算できないため盗聴者は鍵を知ることができない．
 
 楕円曲線上の離散対数問題を利用する変種(ECDH)が存在する．
 
