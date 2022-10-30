@@ -2,10 +2,13 @@ domain: kmaeda6320084.github.io
 url: https://kmaeda6320084.github.io
 baseurl: /learn_crypto
 
-markdown: CommonMarkGhPages
-commonmark:
-  options: ["UNSAFE"]
-  extensions: ["strikethrough"]
+markdown: kramdown
+kramdown:
+  parse_block_html: true
+  highlighter: none
+  math_engine: mathjax
+  syntax_highlighter_opts:
+    disable: true
 
 sass:
   sass_dir: assets/scss
