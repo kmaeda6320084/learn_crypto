@@ -173,6 +173,8 @@ code:not([class]) {
     }
 
     li {
+        margin: auto;
+        margin-left: 0;
         list-style-type: none;
     }
 }
