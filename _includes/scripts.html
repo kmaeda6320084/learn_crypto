@@ -17,41 +17,48 @@
 <!-- header -->
 <script defer type="text/javascript">
     const header = document.getElementById("header");
-    const speed = 0.4;
 
-    let oldHash = document.location.hash;
+    if (!!header) {
+        init(header);
+    }
 
-    let scrollY = window.scrollY;
-    let position = 0;
-    window.addEventListener("scroll", (e) => {
-        let delta = (window.scrollY - scrollY) * speed;
-        let height = header.scrollHeight;
-        scrollY = window.scrollY;
-        position = Math.max(Math.min(position + delta, 0), -height, -scrollY);
-        header.style.top = `${position}px`;
+    function init(header) {
+        const speed = 0.4;
 
-        // if navigated, reset header position
-        const hash = document.location.hash;
-        if (hash === oldHash) return;
-        position = 0;
-        header.style.top = `${position}px`;
+        let oldHash = document.location.hash;
 
-        oldHash = hash;
-    });
+        let scrollY = window.scrollY;
+        let position = 0;
+        window.addEventListener("scroll", (e) => {
+            let delta = (window.scrollY - scrollY) * speed;
+            let height = header.scrollHeight;
+            scrollY = window.scrollY;
+            position = Math.max(Math.min(position + delta, 0), -height, -scrollY);
+            header.style.top = `${position}px`;
+
+            // if navigated, reset header position
+            const hash = document.location.hash;
+            if (hash === oldHash) return;
+            position = 0;
+            header.style.top = `${position}px`;
+
+            oldHash = hash;
+        });
 
 
-    // scroll margin
-    const stylesheet = new CSSStyleSheet();
-    document.adoptedStyleSheets.push(stylesheet);
-    const onResizeHeader = (height) => {
-        stylesheet.replaceSync(`* { scroll-margin-top: ${height}px; }`);
-    };
+        // scroll margin
+        const stylesheet = new CSSStyleSheet();
+        document.adoptedStyleSheets.push(stylesheet);
+        const onResizeHeader = (height) => {
+            stylesheet.replaceSync(`* { scroll-margin-top: ${height}px; }`);
+        };
 
-    const resizeObserver = new ResizeObserver(entries => {
-        const [entry] = entries;
-        const height = entry.borderBoxSize[0].blockSize;
-        onResizeHeader(height);
-    });
-    resizeObserver.observe(header);
-    onResizeHeader(header.scrollHeight);
+        const resizeObserver = new ResizeObserver(entries => {
+            const [entry] = entries;
+            const height = entry.borderBoxSize[0].blockSize;
+            onResizeHeader(height);
+        });
+        resizeObserver.observe(header);
+        onResizeHeader(header.scrollHeight);
+    }
 </script>
