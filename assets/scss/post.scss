@@ -1,7 +1,7 @@
 #post-content {
     grid-area: "main";
 
-    $heading-bg-color: darken($main-bg-color, 10%);
+    $heading-bg-color: $main-border-color;
 
     h1 {
         border-bottom: solid 2px $main-border-color;
