@@ -180,3 +180,20 @@ code:not([class]) {
 .dropdown:hover>.dropdown-content {
     display: block;
 }
+
+.note {
+    width: 100%;
+    margin: 1em;
+
+    &.note {
+        background-color: #7dca89
+    }
+
+    &.warn {
+        background-color: #f2e37d;
+    }
+
+    &.alert {
+        background-color: #e35959;
+    }
+}
