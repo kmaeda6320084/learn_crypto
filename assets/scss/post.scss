@@ -4,30 +4,25 @@
     $heading-bg-color: $main-border-color;
 
     h1 {
-        border-bottom: solid 2px $main-border-color;
         padding: 0.5em 0;
         background-color: $heading-bg-color;
     }
 
     h2 {
-        border-bottom: solid 2px $main-border-color;
         padding: 0.4em 0;
         background-color: $heading-bg-color;
 
     }
 
     h3 {
-        border-bottom: solid 1px $main-border-color;
         padding: 0.3em 0;
         background-color: $heading-bg-color;
 
     }
 
     h4 {
-        border-bottom: solid 1px $main-border-color;
         padding: 0.2em 0;
         background-color: $heading-bg-color;
-
     }
 }
 
