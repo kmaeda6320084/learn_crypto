@@ -70,8 +70,6 @@ a:not([class]):not([data-stylemod*=no-link-highlight]) {
     text-decoration: none;
     color: $main-link-color;
     transition: all 300ms ease-out;
-    align-items: center;
-    justify-content: center;
 
     &:visited {
         color: darken($main-link-color, 30%);
