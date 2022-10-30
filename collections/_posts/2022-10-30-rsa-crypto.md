@@ -26,7 +26,7 @@ RSA暗号は[公開鍵暗号]({% post_url 2022-10-26-crypto-basis %}#commonkey_c
 ただし，`\mathbb{N}_{<N} = \{n \in \mathbb{N} ~|~ 0 \leq n < N \}`とする．
 
 ## $e^\prime$のアルゴリズム
-`(N, e) = p_k$とし，平文を$m \in \mathbb{N}_{<N}`とする．
+`(N, e) = p_k`とし，平文を`m \in \mathbb{N}_{<N}`とする．
 
 1. $m^e \mod N$を出力する．
 
