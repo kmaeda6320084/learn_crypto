@@ -2,7 +2,13 @@
 <script defer>hljs.highlightAll();</script>
 <!-- mermaid -->
 <script defer>
-    mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+    mermaid.initialize({
+        startOnLoad: true, theme: 'neutral',
+        themeVariables: {
+            signalColor: '#b8c9ff',
+            signalTextColor: '#b8c9ff',
+        }
+    });
     mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
 </script>
 
