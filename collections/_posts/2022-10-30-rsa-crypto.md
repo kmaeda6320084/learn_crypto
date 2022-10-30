@@ -5,7 +5,7 @@ last_modified: 2022-10-30
 ---
 
 # RSA暗号の定義
-RSA暗号は[公開鍵暗号]({% post_url 2022-10-26-cypto-basis %}#commonkey_crypto)の一種であり，鍵生成関数$g$, 暗号化関数$e$，復号関数$d$の3つ組$(g, e, d)$で定義される．
+RSA暗号は[公開鍵暗号]({% post_url 2022-10-26-crypto-basis %}#commonkey_crypto)の一種であり，鍵生成関数$g$, 暗号化関数$e$，復号関数$d$の3つ組$(g, e, d)$で定義される．
 
 # 鍵生成関数
 
