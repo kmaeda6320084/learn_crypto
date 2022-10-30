@@ -1,6 +1,7 @@
 ---
 title: 攻撃の基本
 tags: crypto
+last_modified: 2022-1030
 ---
 
 # 攻撃モデル

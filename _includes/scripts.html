@@ -49,7 +49,7 @@
 
     const resizeObserver = new ResizeObserver(entries => {
         const [entry] = entries;
-        const height = entry.borderBoxSize[0].inlineSize;
+        const height = entry.borderBoxSize[0].blockSize;
         onResizeHeader(height);
     });
     resizeObserver.observe(header);

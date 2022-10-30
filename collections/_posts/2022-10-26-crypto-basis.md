@@ -1,6 +1,7 @@
 ---
 title: 暗号の基本的事項
 tags: crypto
+last_modified: 2022-10-30
 ---
 
 # 暗号の前に
@@ -191,3 +192,32 @@ $$ E: \mathbb{K}_E \rightarrow \mathbb{M} \rightarrow \mathbb{C}\\ D: \mathbb{K}
 {:#stream_cipher}
 ## ストリーム暗号(stream cipher)
 1ビットまたは1バイトごとに暗号化する暗号のこと．
+
+
+# 暗号の数学
+## 互いに素(coprime)
+二つの整数$a, b$が互いに素であるとは$a, b$をともに割り切る整数が$1$のみであることである．またこれは，$gcd(a, b) = 1$であることと同値である
+{:#euler_phi_function}
+## オイラー関数(euler's phi function)
+オイラー関数は自然数から自然数への関数$\phi: \mathbb{N} \rightarrow \mathbb{N}$であり， $\phi(n)$は$n$以下の$n$と互いに素な数の個数を返す．
+
+### 例
+$\phi(1) = 1 = |\{1\}|$
+
+$\phi(10) = 4 = |\{1, 3, 7, 9\}|$
+
+{:#fermat_little_theorem}
+## フェルマーの小定理(fermat's little theorem)
+$p$を素数，$a$を整数としたとき，
+$$ a^p \equiv a \pmod p $$
+であることであり，$a$が$p$と互いに素であるとき
+$$ a^{p - 1} \equiv 1 \pmod p$$
+が成立することを主張する定理．
+
+これを法が素数でなくても成立するように拡張したオイラーの定理が存在する．
+
+{:#euler_theorem}
+## オイラーの定理(euler's theorem)
+$m$を整数とし, $a$を$m$と互いに素な整数とする．このとき
+$$ a^{\phi(m)} \equiv 1 \pmod m $$
+を主張する．
