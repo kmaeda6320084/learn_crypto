@@ -165,14 +165,11 @@ code:not([class]) {
     border: solid 1px $main-border-color;
 
     ul {
-        margin: auto;
-        margin-left: 0;
-        padding-left: 0;
+        text-align: left;
+        padding: 0;
     }
 
     li {
-        margin: auto;
-        margin-left: 0;
         list-style-type: none;
     }
 }
