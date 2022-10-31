@@ -57,7 +57,8 @@ div.mermaid {
 }
 
 .katex-display {
-    overflow: auto;
+    overflow-y: hidden;
+    overflow-x: auto;
 }
 
 .note {
