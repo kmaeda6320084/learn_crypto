@@ -1,4 +1,5 @@
 #post-content {
+    overflow-x: hidden;
     grid-area: "main";
 
     $heading-bg-color: $main-border-color;
@@ -31,6 +32,7 @@
 
 #content-root {
     display: grid;
+    overflow-x: hidden;
 }
 
 @media (min-aspect-ratio: 1/1) {
