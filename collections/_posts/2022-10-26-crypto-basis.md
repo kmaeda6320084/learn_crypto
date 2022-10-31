@@ -64,7 +64,7 @@ flowchart LR
 {:#nonce}
 ## ノンス(nonce)
 通信において利用する使い捨ての乱数のこと．
-[リプレイ攻撃]({{ site.baseurl }}{% post_url 2022-10-29-attack-basis %}#replay_attack)を防ぐために利用する．
+[リプレイ攻撃]({% include link.html url="2022-10-29-attack-basis#replay_attack" %})を防ぐために利用する．
 
 {:#hash}
 ## ハッシュ(hash)

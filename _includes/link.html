@@ -1,0 +1,6 @@
+---
+---
+{%- assign parts = include.url | split: "#" -%}
+{%- assign url = parts[0] -%}
+{%- assign id = parts[1] -%}
+{{ site.baseurl }}{% post_url url %}{{ id }}
