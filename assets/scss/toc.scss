@@ -1,6 +1,10 @@
 ul.auto-table-of-contents-toc {
     text-align: left;
-    padding: 0 0em;
+
+    &,
+    ul {
+        padding: 0 0em;
+    }
 
     li {
         list-style-type: none;

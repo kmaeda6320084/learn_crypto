@@ -74,7 +74,9 @@ window.autoc = {
 const activeMarker = 'auto-table-of-contents-toc-menu-active';
 document.addEventListener('click', (e) => {
     const target = e.target;
+    console.log("click");
     if(target.tagName !== "LI" || !target.closest(`ul.${tocMarker}`)) {
+        console.log("noq");
         return;
     }
 
