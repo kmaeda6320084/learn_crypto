@@ -1,3 +1,4 @@
+const tocMarker = 'auto-table-of-contents-toc';
 window.autoc = {
     createTableOfContents: function(node, options={}) {
         const headings = iterateHeadings(node);
@@ -8,8 +9,10 @@ window.autoc = {
             indexed = coalesceId(headings);
         }
         const list = document.createElement('ul');
+        list.classList.add(tocMarker);
         list.append(...createItems(1, peekable(indexed)));
         return list;
+
     
         function createItems(depth, iterator) {
             const headingLevelRegex = /\d+$/;
@@ -63,8 +66,24 @@ window.autoc = {
                 yield item;
             }
         }
+    
     }
 };
+
+
+const activeMarker = 'auto-table-of-contents-toc-menu-active';
+document.addEventListener('click', (e) => {
+    const target = e.target;
+    if(target.tagName !== "LI" || !target.closest(`ul.${tocMarker}`)) {
+        return;
+    }
+
+    if(target.classList.contains(activeMarker)) {
+        target.classList.remove(activeMarker);
+    } else {
+        target.classList.add(activeMarker);
+    }
+}); 
 
 function peekable(iterator) {
     return {
