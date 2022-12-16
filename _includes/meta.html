@@ -4,13 +4,12 @@
 
 <!-- debug -->
 <script>
-const params = (new URL(document.location)).searchParams;
-if(params.get('debug') === 'enable')
-{
-    window.addEventListener('error', (e) => {
-        alert(JSON.stringify(e));
-    });
-}
+    const params = (new URL(document.location)).searchParams;
+    if (params.get('debug') === 'enable') {
+        window.addEventListener('error', (e) => {
+            alert(JSON.stringify(e));
+        });
+    }
 </script>
 <!--fonts-->
 <link rel="preconnect" href="https://fonts.googleapis.com">

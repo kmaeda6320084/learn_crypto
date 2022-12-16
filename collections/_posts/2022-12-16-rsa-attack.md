@@ -1,5 +1,5 @@
 ---
-title: RSA暗号
+title: RSA暗号の攻撃
 tags: crypto rsa attack
 last_modified: 2022-12-16
 ---
@@ -18,9 +18,9 @@ RSAは鍵生成において，ランダムな素数のペア`p, q`から法`N = 
 
 それぞれの通信での暗号文は以下のようになる．
 
-\(
+\\(
 \begin{align*}
 c_1 = m^{e_1} \mod N
 c_2 = m^{e_2} \mod N
 \end{align*}
-\)
+\\)
