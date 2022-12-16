@@ -1,7 +1,7 @@
 ---
 title: RSA暗号
 tags: crypto rsa
-last_modified: 2022-10-30
+last_modified: 2022-12-16
 ---
 
 # RSA暗号の定義
@@ -41,3 +41,6 @@ $(N, e) = p_k$とし，暗号文を$c \in \mathbb{N}_{<N}$とする．
 
 1. $c^{s_k} \mod N$を出力する．
 
+
+## RSAへの攻撃
+[別ページ]({{ site.baseurl }}{% post_url 2022-12-16-rsa-attack %})
