@@ -181,21 +181,3 @@ code:not([class]) {
 .dropdown:hover>.dropdown-content {
     display: block;
 }
-
-.note {
-    width: auto;
-    margin: 1em;
-    padding: 1em;
-
-    &.note {
-        background-color: #54823a
-    }
-
-    &.warn {
-        background-color: #867c3c;
-    }
-
-    &.alert {
-        background-color: #8f4a42;
-    }
-}

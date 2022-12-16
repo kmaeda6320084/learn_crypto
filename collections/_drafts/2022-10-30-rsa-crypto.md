@@ -1,7 +1,7 @@
 ---
 title: RSA暗号
 tags: crypto rsa
-last_modified: 2022-12-16
+last_modified: 2022-11-07
 ---
 
 # RSA暗号の定義
@@ -41,6 +41,7 @@ $(N, e) = p_k$とし，暗号文を$c \in \mathbb{N}_{<N}$とする．
 
 1. $c^{s_k} \mod N$を出力する．
 
+
 # 脆弱性
 ## 弱い平文
 
@@ -55,6 +56,3 @@ $(N, e) = p_k$とし，暗号文を$c \in \mathbb{N}_{<N}$とする．
 この時、$f$は$f(m) > \sqrt[e]{N}$であり容易に逆関数を求められる関数である。
 
 一般的に$f$はビットorであり十分桁が大きいビットを立てる。
-
-# RSAへの攻撃
-[別ページ]({{ site.baseurl }}{% post_url 2022-12-16-rsa-attack %})
