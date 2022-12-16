@@ -34,6 +34,10 @@
     display: grid;
 }
 
+#post-content {
+    padding: 0 1em;
+}
+
 @media (min-aspect-ratio: 1/1) {
     #content-root {
         grid-template: "nav-l main" 1fr / 1fr 61.8%;
@@ -43,10 +47,6 @@
 @media (max-aspect-ratio: 1/1) {
     #content-root {
         grid-template: "nav-l main ." 1fr / 1fr 100% 1fr;
-    }
-
-    #post-content {
-        padding: 0 1em;
     }
 }
 
