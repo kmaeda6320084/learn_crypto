@@ -8,6 +8,7 @@ html {
     font-size: 100%;
     height: 100%;
     overflow-x: hidden;
+    overflow-y: visible;
 }
 
 body {
@@ -16,7 +17,7 @@ body {
     margin: auto;
     padding-bottom: 33.3%;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: visible;
 }
 
 
