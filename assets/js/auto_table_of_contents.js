@@ -24,12 +24,10 @@ window.autoc = {
                 if (currentDepth < depth) break;
                 if (currentDepth == depth) {
                     iterator.next();
-                    const item = document.createElement('li');
                     const a = document.createElement('a');
-                    item.append(a);
                     a.innerHTML = current.value.innerHTML;
                     a.href = `#${current.value.id}`;
-                    buffer.push(item);
+                    buffer.push(a);
                 } else {
                     const item = document.createElement('ul');
                     item.append(...createItems(currentDepth, iterator));
@@ -74,9 +72,7 @@ window.autoc = {
 const activeMarker = 'auto-table-of-contents-toc-menu-active';
 document.addEventListener('click', (e) => {
     const target = e.target;
-    console.log("click");
     if(target.tagName !== "LI" || !target.closest(`ul.${tocMarker}`)) {
-        console.log("noq");
         return;
     }
 
