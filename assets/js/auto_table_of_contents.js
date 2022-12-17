@@ -13,6 +13,7 @@ window.autoc = {
         return toc;
 
         function makeToc(depth, peekable) {
+            const headingLevelRegex = /\d+$/;
             const list = document.createElement('ul');
             while (true) {
                 const current = peekable.peek();
