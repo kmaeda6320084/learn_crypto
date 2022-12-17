@@ -202,9 +202,9 @@ $$ E: \mathbb{K}_E \rightarrow \mathbb{M} \rightarrow \mathbb{C}\\ D: \mathbb{K}
 オイラー関数は自然数から自然数への関数$\phi: \mathbb{N} \rightarrow \mathbb{N}$であり， $\phi(n)$は$n$以下の$n$と互いに素な数の個数を返す．
 
 ### 例
-$\phi(1) = 1 = |\{1\}|$
+$\phi(1) = 1 = \vert\{1\}\vert$
 
-$\phi(10) = 4 = |\{1, 3, 7, 9\}|$
+$\phi(10) = 4 = \vert\{1, 3, 7, 9\}\vert$
 
 {:#fermat_little_theorem}
 ## フェルマーの小定理(fermat's little theorem)
