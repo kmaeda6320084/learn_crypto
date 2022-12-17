@@ -1,43 +1,39 @@
 const tocMarker = 'auto-table-of-contents-toc';
 window.autoc = {
-    createTableOfContents: function(node, options={}) {
+    createTableOfContents: function (node, options = {}) {
         const headings = iterateHeadings(node);
         let indexed;
-        if(options.hasOwnProperty('definedIdOnly')) {
+        if (options.hasOwnProperty('definedIdOnly')) {
             indexed = hasId(headings);
         } else {
             indexed = coalesceId(headings);
         }
-        const list = document.createElement('ul');
-        list.classList.add(tocMarker);
-        list.append(...createItems(1, peekable(indexed)));
-        return list;
+        const toc = makeToc(0, peekable(indexed));
+        toc.classList.add(tocMarker);
+        return toc;
 
-    
-        function createItems(depth, iterator) {
-            const headingLevelRegex = /\d+$/;
-            const buffer = new Array();
-            do {
-                const current = iterator.peek();
+        function makeToc(depth, peekable) {
+            const list = document.createElement('ul');
+            while (true) {
+                const current = peekable.peek();
                 if (current.done) break;
                 const [currentDepth] = current.value.nodeName.match(headingLevelRegex);
-                if (currentDepth < depth) break;
-                if (currentDepth == depth) {
-                    iterator.next();
-                    const a = document.createElement('a');
-                    a.innerHTML = current.value.innerHTML;
-                    a.href = `#${current.value.id}`;
-                    buffer.push(a);
-                } else {
-                    const item = document.createElement('ul');
-                    item.append(...createItems(currentDepth, iterator));
-                    buffer.push(item);
+                if (currentDepth <= depth) break;
+                peekable.next();
+                const item = document.createElement('li');
+                const a = document.createElement('a');
+                a.innerHTML = current.value.innerHTML;
+                a.href = `#${current.value.id}`;
+                item.append(a);
+                const children = makeToc(depth + 1, peekable);
+                if (children.childElementCount > 0) {
+                    item.append(children);
                 }
-            } while (true);
-    
-            return buffer;
+                list.append(item);
+            }
+            return list;
         }
-    
+
         function* iterateHeadings(root) {
             for (const child of root.children) {
                 if (child instanceof HTMLHeadingElement) {
@@ -46,25 +42,24 @@ window.autoc = {
                 yield* iterateHeadings(child);
             }
         }
-    
-        function* hasId(iterator){
-            for(const item of iterator) {
-                if(!!item.id)
+
+        function* hasId(iterator) {
+            for (const item of iterator) {
+                if (!!item.id)
                     return item;
             }
         }
 
-        function* coalesceId(iterator)
-        {
+        function* coalesceId(iterator) {
             let index = 0;
             const uuid = window.crypto.randomUUID();
-            for(const item of iterator) {
+            for (const item of iterator) {
                 item.id ??= `auto-toc-${uuid}-${index}`;
                 index++;
                 yield item;
             }
         }
-    
+
     }
 };
 
@@ -72,16 +67,16 @@ window.autoc = {
 const activeMarker = 'auto-table-of-contents-toc-menu-active';
 document.addEventListener('click', (e) => {
     const target = e.target;
-    if(target.tagName !== "LI" || !target.closest(`ul.${tocMarker}`)) {
+    if (target.tagName !== "LI" || !target.closest(`ul.${tocMarker}`)) {
         return;
     }
 
-    if(target.classList.contains(activeMarker)) {
+    if (target.classList.contains(activeMarker)) {
         target.classList.remove(activeMarker);
     } else {
         target.classList.add(activeMarker);
     }
-}); 
+});
 
 function peekable(iterator) {
     return {
