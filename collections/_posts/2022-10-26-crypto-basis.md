@@ -48,13 +48,13 @@ $f(n) = O(n)$なら$f(n )= O(n^2)$でもある．
 要求に対してデータを返す存在のこと．要求する側は計算方法を知らないことがポイント．
 
 例えば関数$f$を計算するオラクルは
-```mermaid
+$$`mermaid
 flowchart LR
     user[ユーザー];
     oracle[オラクル\nf];
     user -- x --> oracle;
     oracle -- "f(x)" --> user;
-```
+$$`
 このようにユーザーの要求$x$に応じて$f(x)$を返す．
 
 暗号化を行うオラクルを暗号化オラクル．復号を行うオラクルを復号オラクルという．
@@ -95,7 +95,7 @@ flowchart LR
 
 ### 公開鍵暗号方式
 公開鍵(暗号化鍵)を先に送信し，共通鍵を暗号化鍵で暗号化された共通鍵を受信する方法．
-```mermaid
+$$`mermaid
 sequenceDiagram
     participant Server as 受信者
     participant Tapper as 盗聴者
@@ -109,7 +109,7 @@ sequenceDiagram
     note over Tapper: ck/pkを知る
     note over Server: ck/pkをskで復号
 
-```
+$$`
 ただしck/pkはckをpkで暗号化したものを表す．
 
 受信者と送信者はckを共有できているが, 盗聴者はpk, ck/pkのみしか知らないためckを知ることができない．
@@ -118,7 +118,7 @@ sequenceDiagram
 ### Diffie-Hellman鍵交換(Diffie-Hellman key exchange: DH)
 離散対数問題を利用した鍵交換の手法の一つ．
 
-```mermaid
+$$`mermaid
 sequenceDiagram
     participant Server as 受信者
     participant Tapper as 盗聴者
@@ -139,7 +139,7 @@ sequenceDiagram
     note over Client: Kxyを計算
     note over Server: Kyxを計算
 
-```
+$$`
 ただし${\tt Ka} = G^{\tt a} \mod P$とし，${\tt Kab} = (G^{\tt a} \mod P)^{\tt b} \mod P$とする．
 
 ここで$(G^{\tt a} \mod P)^{\tt b} \mod P = G^{\tt ab} \mod P$であるため，$\tt Kxy = Kyx$となる．
@@ -202,9 +202,9 @@ $$ E: \mathbb{K}_E \rightarrow \mathbb{M} \rightarrow \mathbb{C}\\ D: \mathbb{K}
 オイラー関数は自然数から自然数への関数$\phi: \mathbb{N} \rightarrow \mathbb{N}$であり， $\phi(n)$は$n$以下の$n$と互いに素な数の個数を返す．
 
 ### 例
-`\phi(1) = 1 = |\{1\}|`
+$\phi(1) = 1 = |\{1\}|$
 
-`\phi(10) = 4 = |\{1, 3, 7, 9\}|`
+$\phi(10) = 4 = |\{1, 3, 7, 9\}|$
 
 {:#fermat_little_theorem}
 ## フェルマーの小定理(fermat's little theorem)
