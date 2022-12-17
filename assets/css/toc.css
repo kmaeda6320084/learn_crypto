@@ -1,0 +1,32 @@
+ul.auto-table-of-contents-toc {
+    text-align: left;
+}
+
+ul.auto-table-of-contents-toc,
+ul.auto-table-of-contents-toc ul {
+    padding: 0 0em;
+}
+
+ul.auto-table-of-contents-toc li {
+    list-style-type: none;
+}
+
+ul.auto-table-of-contents-toc li:has(.auto-table-of-contents-toc-menu-active)>* {
+    display: relative;
+}
+
+ul.auto-table-of-contents-toc li:not(.auto-table-of-contents-toc-menu-active)>ul {
+    display: none;
+}
+
+ul.auto-table-of-contents-toc li:has(> ul):not(.auto-table-of-contents-toc-menu-active)::before {
+    content: "▶";
+}
+
+ul.auto-table-of-contents-toc li:has(> ul).auto-table-of-contents-toc-menu-active::before {
+    content: "▼";
+}
+
+ul.auto-table-of-contents-toc li:not(:has(> ul)) {
+    padding: 0 0 0 1em;
+}
