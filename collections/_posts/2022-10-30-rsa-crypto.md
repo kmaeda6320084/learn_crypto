@@ -33,8 +33,8 @@ $(N, e) = p_k$とし，平文を$m \in \mathbb{N}_{\lt N}$とする．
 
 # 復号関数
 
-復号関数$d$は復号鍵$s_k$を受け取り復号オラクル$d^\prime : \mathbb{N}_{\lt N} \rightarrow \mathbb{N}_{\lt N}$を返す関数である．
-ただし，$\mathbb{N}_{\lt N} = \{n \in \mathbb{N} ~|~ 0 \leq n \lt N \}$とする．
+復号関数$d$は復号鍵$s_k$を受け取り復号オラクル`d^\prime : \mathbb{N}_{\lt N} \rightarrow \mathbb{N}_{\lt N}`を返す関数である．
+ただし，`\mathbb{N}_{\lt N} = \{n \in \mathbb{N} ~|~ 0 \leq n \lt N \}`とする．
 
 ## $d^\prime$のアルゴリズム
 $(N, e) = p_k$とし，暗号文を$c \in \mathbb{N}_{\lt N}$とする．
