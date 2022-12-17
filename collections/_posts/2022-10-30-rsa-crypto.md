@@ -22,22 +22,22 @@ RSA暗号は[公開鍵暗号]({% post_url 2022-10-26-crypto-basis %}#commonkey_c
 ここで$\phi$はオイラー関数とする．
 
 # 暗号化関数
-暗号化関数$e$は公開鍵$p_k$を受け取り暗号化オラクル$e^\prime : \mathbb{N}_{<N} \rightarrow \mathbb{N}_{<N}$を返す関数である．
-ただし，$\mathbb{N}_{<N} = \{n \in \mathbb{N} ~|~ 0 \leq n < N \}$とする．
+暗号化関数$e$は公開鍵$p_k$を受け取り暗号化オラクル$e^\prime : \mathbb{N}_{\lt N} \rightarrow \mathbb{N}_{\lt N}$を返す関数である．
+ただし，$\mathbb{N}_{\lt N} = \{n \in \mathbb{N} ~|~ 0 \leq n \lt N \}$とする．
 
 ## $e^\prime$のアルゴリズム
-$(N, e) = p_k$とし，平文を$m \in \mathbb{N}_{<N}$とする．
+$(N, e) = p_k$とし，平文を$m \in \mathbb{N}_{\lt N}$とする．
 
 1. $m^e \mod N$を出力する．
 
 
 # 復号関数
 
-復号関数$d$は復号鍵$s_k$を受け取り復号オラクル$d^\prime : \mathbb{N}_{<N} \rightarrow \mathbb{N}_{<N}$を返す関数である．
-ただし，$\mathbb{N}_{<N} = \{n \in \mathbb{N} ~|~ 0 \leq n < N \}$とする．
+復号関数$d$は復号鍵$s_k$を受け取り復号オラクル$d^\prime : \mathbb{N}_{\lt N} \rightarrow \mathbb{N}_{\lt N}$を返す関数である．
+ただし，$\mathbb{N}_{\lt N} = \{n \in \mathbb{N} ~|~ 0 \leq n \lt N \}$とする．
 
 ## $d^\prime$のアルゴリズム
-$(N, e) = p_k$とし，暗号文を$c \in \mathbb{N}_{<N}$とする．
+$(N, e) = p_k$とし，暗号文を$c \in \mathbb{N}_{\lt N}$とする．
 
 1. $c^{s_k} \mod N$を出力する．
 
