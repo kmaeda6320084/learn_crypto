@@ -221,3 +221,38 @@ $$ a^{p - 1} \equiv 1 \pmod p$$
 $m$を整数とし, $a$を$m$と互いに素な整数とする．このとき
 $$ a^{\phi(m)} \equiv 1 \pmod m $$
 を主張する．
+
+{:#chinese_reminder_theorem}
+## 中国剰余定理(Chinese Reminder Theorem)
+互いに素な$n$個の数$m_1, \cdots ,m_n$と$n$個の任意の整数$a_1, \cdots, a_n$に対して，
+$$
+    x \equiv a_1 \pmod{m_1}\\
+    x \equiv a_2 \pmod{m_2}\\
+    \vdots\\
+    x \equiv a_n \pmod{m_n}
+$$ 
+を満たす$x$が法$m_1m_2\cdots m_n$において一意に存在することを主張する定理．
+
+一意性の証明は省略．
+
+### 解の計算
+$M = m_1m_2 \cdots m_n$とする．このとき$m_1, \cdots ,m_n$は互いに素であるから，
+任意の$k$で$M / m_k$と$m_k$は互いに素である．よって拡張ユークリッドの互除法により，
+$$
+u_k \cdot \frac{M}{m_k} + v_k \cdot m_k = 1 
+$$
+を満たす$u_k, v_k$が存在し，計算することができる．いま，
+$$
+x = \sum_{k = 1}^{n} a_k u_k \frac{M}{m_k}
+$$
+とすると，
+$$
+\begin{aligned}
+    x \mod m_i &= \left(\sum_{k = 1}^{n} a_k u_k \frac{M}{m_k}\right) \mod m_i\\
+    &= \sum_{k = 1}^{n} \left( a_k u_k \frac{M}{m_k} \mod m_i \right)\\
+    &= a_iu_i\frac{M}{m_i} \mod m_i\\
+    &= a_i( 1 - v_i \cdot m_i) \mod m_i\\
+    &= a_i \mod m_i
+\end{aligned}
+$$
+である．よって解$x$が計算できた.

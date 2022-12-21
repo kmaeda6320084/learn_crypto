@@ -177,7 +177,7 @@ $N_i$が互いに素でない場合，$gcd$を計算して約数を特定でき�
 $$
 c_i = m^e \mod N_i
 $$
-であり，$N_i$が互いに素であるとしたから，中国剰余定理より
+であり，$N_i$が互いに素であるとしたから[中国剰余定理]({{ site.baseurl }}{% post_url 2022-10-26-crypto-basis %}#chinese_reminder_theorem)，より
 $$
 (\forall i) ~ x \equiv m^e \mod N_i
 $$
